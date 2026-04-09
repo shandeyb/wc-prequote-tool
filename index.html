@@ -4,24 +4,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WC Prequote Template Generator | TX</title>
+<link href="https://fonts.googleapis.com/css2?family=Song+Myung&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/proxima-nova-2" rel="stylesheet">
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 <style>
   :root {
-    /* Gusto Brand */
-    --brand-primary: #0a8080;
-    --brand-hover: #005c5c;
-    --brand-disabled: #7ec5c4;
-    --brand-secondary-bg: #f9fdfc;
-    --brand-tertiary-hover-bg: #e5f4f3;
-    /* Gusto Neutral */
-    --text-primary: #1c1c1c;
-    --text-secondary: #535353;
-    --text-tertiary: #6b6b6b;
-    --text-disabled: #9f9f9f;
-    --bg-secondary: #fafafa;
-    --border-elevated: #c8c8c8;
-    --white: #ffffff;
-    /* Gusto Semantic */
+    /* Gusto Brand - Kale & Guava */
+    --kale: #0A8080;
+    --kale-80: #3B9999;
+    --kale-60: #6CB3B3;
+    --kale-40: #9DCCCC;
+    --kale-20: #CEE6E6;
+    --guava: #F45D48;
+    --guava-80: #F67D6D;
+    --guava-60: #F89E91;
+    --guava-40: #FBBEB6;
+    --guava-20: #FDDFDA;
+    /* Gusto Typography & Backgrounds */
+    --text-primary: #222525;
+    --text-secondary: #4E5151;
+    --text-tertiary: #7A7C7C;
+    --text-disabled: #A7A8A8;
+    --bg-warm: #F7F4F2;
+    --bg-peach: #FEEEE7;
+    --bg-white: #FFFFFF;
+    --border: #D3D3D3;
+    --border-light: #E8E5E3;
+    /* Semantic */
     --success: #007a4b;
     --success-bg: #f8fdf7;
     --error: #c53336;
@@ -30,22 +39,21 @@
     --warning-bg: #fffbf7;
     --info: #006cc1;
     --info-bg: #fdfcff;
-    --guava: #f45d48;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: var(--white);
+    font-family: 'Proxima Nova', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--bg-warm);
     color: var(--text-primary);
     line-height: 1.6;
   }
 
   /* Header */
   .header {
-    background: var(--white);
-    border-bottom: 1px solid var(--border-elevated);
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border);
     padding: 16px 32px;
     display: flex;
     align-items: center;
@@ -53,29 +61,30 @@
   }
 
   .header-logo {
-    font-weight: 700;
-    font-size: 22px;
-    color: var(--brand-primary);
+    font-family: 'Song Myung', serif;
+    font-weight: 400;
+    font-size: 24px;
+    color: var(--kale);
     letter-spacing: -0.5px;
   }
 
   .header-divider {
     width: 1px;
     height: 24px;
-    background: var(--border-elevated);
+    background: var(--border);
   }
 
   .header-title {
     font-size: 15px;
     color: var(--text-secondary);
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .header-badge {
-    background: var(--brand-tertiary-hover-bg);
-    color: var(--brand-primary);
+    background: var(--guava-20);
+    color: var(--guava);
     font-size: 12px;
-    font-weight: 600;
+    font-weight: 700;
     padding: 3px 10px;
     border-radius: 12px;
   }
@@ -88,8 +97,9 @@
   }
 
   h1 {
-    font-size: 28px;
-    font-weight: 700;
+    font-family: 'Song Myung', serif;
+    font-size: 32px;
+    font-weight: 400;
     margin-bottom: 6px;
     color: var(--text-primary);
   }
@@ -114,28 +124,29 @@
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
-    font-weight: 500;
-    background: var(--white);
-    border: 1px solid var(--border-elevated);
+    font-weight: 600;
+    background: var(--bg-white);
+    border: 1px solid var(--border);
     color: var(--text-tertiary);
     cursor: pointer;
     transition: all 0.15s ease;
   }
 
   .step-indicator:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-peach);
+    border-color: var(--guava-40);
   }
 
   .step-indicator.active {
-    background: var(--brand-tertiary-hover-bg);
-    border-color: var(--brand-primary);
-    color: var(--brand-primary);
+    background: var(--kale-20);
+    border-color: var(--kale);
+    color: var(--kale);
   }
 
   .step-indicator.completed {
-    background: var(--brand-primary);
+    background: var(--kale);
     color: white;
-    border-color: var(--brand-primary);
+    border-color: var(--kale);
   }
 
   .step-num {
@@ -147,13 +158,13 @@
     justify-content: center;
     font-size: 12px;
     font-weight: 700;
-    background: var(--border-elevated);
+    background: var(--border);
     color: var(--text-tertiary);
     flex-shrink: 0;
   }
 
   .step-indicator.active .step-num {
-    background: var(--brand-primary);
+    background: var(--kale);
     color: white;
   }
 
@@ -164,8 +175,8 @@
 
   /* Cards */
   .card {
-    background: var(--white);
-    border: 1px solid var(--border-elevated);
+    background: var(--bg-white);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 28px;
     margin-bottom: 24px;
@@ -208,18 +219,18 @@
 
   input, textarea, select {
     padding: 10px 12px;
-    border: 1px solid var(--border-elevated);
+    border: 1px solid var(--border);
     border-radius: 8px;
     font-size: 14px;
     font-family: inherit;
     color: var(--text-primary);
-    background: var(--white);
+    background: var(--bg-white);
     transition: border-color 0.15s ease, box-shadow 0.15s ease;
   }
 
   input:focus, textarea:focus, select:focus {
     outline: none;
-    border-color: var(--brand-primary);
+    border-color: var(--kale);
     box-shadow: 0 0 0 3px rgba(10, 128, 128, 0.12);
   }
 
@@ -234,8 +245,8 @@
 
   /* API Key bar */
   .api-key-bar {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-elevated);
+    background: var(--bg-white);
+    border: 1px solid var(--border);
     border-radius: 12px;
     padding: 14px 20px;
     margin-bottom: 24px;
@@ -251,7 +262,7 @@
 
   .api-key-bar input {
     flex: 1;
-    background: var(--white);
+    background: var(--bg-white);
   }
 
   .api-status {
@@ -299,7 +310,7 @@
 
   .data-info .count {
     font-weight: 700;
-    color: var(--brand-primary);
+    color: var(--kale);
   }
 
   .data-info .check {
@@ -318,7 +329,7 @@
     font-weight: 600;
     cursor: pointer;
     border: 1px solid var(--text-primary);
-    background: var(--white);
+    background: var(--bg-white);
     color: var(--text-primary);
     transition: all 0.15s ease;
     display: inline-flex;
@@ -327,23 +338,23 @@
   }
 
   .btn:hover {
-    background: var(--bg-secondary);
+    background: var(--bg-warm);
   }
 
   .btn-primary {
-    background: var(--brand-primary);
+    background: var(--kale);
     color: white;
-    border-color: var(--brand-primary);
+    border-color: var(--kale);
   }
 
   .btn-primary:hover {
-    background: var(--brand-hover);
-    border-color: var(--brand-hover);
+    background: #005c5c;
+    border-color: #005c5c;
   }
 
   .btn-primary:disabled {
-    background: var(--brand-disabled);
-    border-color: var(--brand-disabled);
+    background: var(--kale-40);
+    border-color: var(--kale-40);
     cursor: not-allowed;
   }
 
@@ -354,7 +365,7 @@
   }
 
   .btn-secondary {
-    border-color: var(--border-elevated);
+    border-color: var(--border);
     color: var(--text-secondary);
   }
 
@@ -379,7 +390,7 @@
   }
 
   .results-table th {
-    background: var(--bg-secondary);
+    background: var(--bg-warm);
     padding: 10px 12px;
     text-align: left;
     font-size: 12px;
@@ -387,22 +398,22 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: var(--text-tertiary);
-    border-bottom: 2px solid var(--border-elevated);
+    border-bottom: 2px solid var(--border);
   }
 
   .results-table td {
     padding: 10px 12px;
-    border-bottom: 1px solid var(--border-elevated);
+    border-bottom: 1px solid var(--border-light);
     color: var(--text-primary);
   }
 
   .results-table tr:hover td {
-    background: var(--bg-secondary);
+    background: var(--bg-peach);
   }
 
   .class-code-badge {
-    background: var(--brand-tertiary-hover-bg);
-    color: var(--brand-primary);
+    background: var(--kale-20);
+    color: var(--kale);
     font-weight: 700;
     padding: 2px 8px;
     border-radius: 4px;
@@ -412,8 +423,8 @@
 
   /* Template preview */
   .template-preview {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-elevated);
+    background: var(--bg-warm);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 20px;
     margin-top: 16px;
@@ -422,7 +433,7 @@
   .preview-row {
     display: flex;
     padding: 8px 0;
-    border-bottom: 1px solid var(--border-elevated);
+    border-bottom: 1px solid var(--border-light);
   }
 
   .preview-row:last-child {
@@ -451,17 +462,18 @@
   }
 
   .summary-card {
-    background: var(--bg-secondary);
-    border: 1px solid var(--border-elevated);
+    background: var(--bg-white);
+    border: 1px solid var(--border);
     border-radius: 8px;
     padding: 16px;
     text-align: center;
   }
 
   .summary-card .value {
-    font-size: 24px;
-    font-weight: 700;
-    color: var(--brand-primary);
+    font-family: 'Song Myung', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--kale);
   }
 
   .summary-card .label {
@@ -482,21 +494,21 @@
   }
 
   .alert-success {
-    background: var(--success-bg);
-    color: var(--success);
-    border: 1px solid #bceece;
+    background: var(--kale-20);
+    color: var(--kale);
+    border: 1px solid var(--kale-40);
   }
 
   .alert-error {
-    background: var(--error-bg);
-    color: var(--error);
-    border: 1px solid #ff9f99;
+    background: var(--guava-20);
+    color: var(--guava);
+    border: 1px solid var(--guava-40);
   }
 
   .alert-info {
-    background: var(--info-bg);
-    color: var(--info);
-    border: 1px solid #8abbff;
+    background: var(--bg-peach);
+    color: var(--text-secondary);
+    border: 1px solid var(--guava-40);
   }
 
   /* Spinner */
@@ -1051,7 +1063,7 @@ function generateTemplate() {
             <td>${a.employees}</td>
           </tr>
         `).join('')}
-        <tr style="font-weight:700; background:var(--bg-secondary)">
+        <tr style="font-weight:700; background:var(--bg-warm)">
           <td colspan="3">Total</td>
           <td>$${totalPayroll.toLocaleString()}</td>
           <td>${totalEEs}</td>
