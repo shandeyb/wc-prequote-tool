@@ -1,0 +1,877 @@
+naics,top1_code,top1_desc,top2_code,top2_desc,top3_code,top3_desc,candidate_count
+111000,8006,Store — Grocery Retail,4511,Analytical Laboratories,0045,Farm,4
+111219,8859,Computer Data Processing,0172,Farm,9082,Caterer — Full Service,5
+111332,8810,Clerical Office Employees NOC,,,,,1
+111339,8078,Ice Cream Stores,8006,Store — Grocery Retail,,,2
+111411,0035,Bulb or Flower Farm,8017,Store Retail NOC,,,2
+111419,0035,Bulb or Flower Farm,,,,,1
+111421,0005,Farm,8742,Outside Sales,8018,Appliance Distributors,3
+111422,8001,Store — Florist,0035-EM,Bulb or Flower Farm,8017,Store Retail NOC,4
+111998,0005,Farm,8742,Outside Sales,8810,Clerical Office Employees NOC,8
+112000,9061,Club NOC,,,,,1
+112310,8810,Clerical Office Employees NOC,,,,,1
+112519,0113,Aquaculture NOC,0019,Aquaculture NOC,8742,Outside Sales,6
+112920,8742,Outside Sales,0951,Construction/Project Mgr (CGL),,,2
+112990,8017,Store Retail NOC,8831,Pet Grooming / Veterinarian,8810,Clerical Office Employees NOC,4
+114119,8810,Clerical Office Employees NOC,,,,,1
+115000,8018,Appliance Distributors,,,,,1
+115112,8742,Outside Sales,0042,Land and Garden Services,8018,Appliance Distributors,7
+115114,8810,Clerical Office Employees NOC,,,,,1
+115116,8810,Clerical Office Employees NOC,8859,Computer Data Processing,,,2
+115310,8810,Clerical Office Employees NOC,0005,Farm,8742,Outside Sales,3
+211130,8810,Clerical Office Employees NOC,9015-EM,Buildings NOC,,,2
+212200,8601,Architectural / Engineering Firm,8810,Clerical Office Employees NOC,,,2
+212210,0955,Analytical Laboratories,,,,,1
+212311,8018,Appliance Distributors,8810,Clerical Office Employees NOC,,,2
+212321,7219,Trucking NOC,,,,,1
+213112,8810,Clerical Office Employees NOC,,,,,1
+213114,8810,Clerical Office Employees NOC,,,,,1
+221114,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,8603,Architectural/Engineering Firm,5
+221118,4511,Analytical Laboratories,8810,Clerical Office Employees NOC,5190,Electrical Wiring,7
+221121,8803,Accounting Services (traveling),8859,Computer Data Processing,,,2
+221122,8810,Clerical Office Employees NOC,,,,,1
+221210,8742,Outside Sales,,,,,1
+221310,5188,Auto Sprinkler Installation,5183,Plumbing NOC,8601,Architectural / Engineering Firm,6
+221320,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,,,2
+236115,5645,Carpentry — Residential,5437,Drywall / Wallboard Installation,8601,Architectural / Engineering Firm,10
+236116,8603,Architectural/Engineering Firm,5445,Drywall/Wallboard Installation,9015,Buildings NOC,3
+236117,8603,Architectural/Engineering Firm,8810,Clerical Office Employees NOC,,,2
+236118,8810,Clerical Office Employees NOC,5403,Carpentry NOC,8742,Outside Sales,6
+236210,5645,Carpentry — Residential,5535,Awning Erection,8810,Clerical Office Employees NOC,4
+236220,5429,Furniture/Fixtures Installation,8810,Clerical Office Employees NOC,0652,Manufactured/Prefabricated Home,10
+237110,8810,Clerical Office Employees NOC,,,,,1
+237130,8810,Clerical Office Employees NOC,0953,Computer System Designers,5190,Electrical Wiring,3
+237210,8810,Clerical Office Employees NOC,,,,,1
+237310,8742,Outside Sales,5201,Concrete or Cement Work,5221,Concrete or Cement Work,4
+237990,8601,Architectural / Engineering Firm,,,,,1
+238110,5221,Concrete or Cement Work,5201,Concrete or Cement Work,5205,Concrete or Cement Work,7
+238120,8859,Computer Data Processing,5183,Plumbing NOC,,,2
+238130,5403,Carpentry NOC,5645,Carpentry — Residential,,,2
+238140,5022,Masonry NOC,9014,Janitorial / Buildings by Contractor,8832,Physician / Dentist Office,6
+238150,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,,,2
+238160,8810,Clerical Office Employees NOC,,,,,1
+238170,5645,Carpentry — Residential,,,,,1
+238190,5221,Concrete or Cement Work,9014,Janitorial / Buildings by Contractor,5474,Plastering NOC,4
+238210,5190,Electrical Wiring,5191,Electronic / Precision Equipment Repair,8810,Clerical Office Employees NOC,4
+238220,5183,Plumbing NOC,5536,Solar Energy Contractors,8810,Clerical Office Employees NOC,5
+238221,5183,Plumbing NOC,,,,,1
+238290,5191,Electronic / Precision Equipment Repair,,,,,1
+238310,5437,Drywall / Wallboard Installation,,,,,1
+238320,8742,Outside Sales,5474,Plastering NOC,,,2
+238330,5478,Floor Covering Installation,5474,Plastering NOC,5437,Drywall / Wallboard Installation,10
+238340,5348,Ceramic Tile / Stone / Mosaic,8017,Store Retail NOC,8810,Clerical Office Employees NOC,3
+238350,5437,Drywall / Wallboard Installation,8810,Clerical Office Employees NOC,,,2
+238390,5403,Carpentry NOC,5474,Plastering NOC,5437,Drywall / Wallboard Installation,3
+238910,9102,Lawn Maintenance,8742,Outside Sales,6217,Excavation,3
+238990,8810,Clerical Office Employees NOC,9014,Janitorial / Buildings by Contractor,6400,Fence Erection Contractors,6
+311111,6504,Baby Food Mfg.,8018,Appliance Distributors,8810,Clerical Office Employees NOC,4
+311119,8810,Clerical Office Employees NOC,8742,Outside Sales,8018,Appliance Distributors,4
+311221,8810,Clerical Office Employees NOC,,,,,1
+311230,8810,Clerical Office Employees NOC,2003,Bakery (Wholesale),8742,Outside Sales,3
+311340,8017,Store Retail NOC,2041,Candy/Chocolate Mfg.,6504,Baby Food Mfg.,3
+311351,2041,Candy/Chocolate Mfg.,8017,Store Retail NOC,8018,Appliance Distributors,6
+311352,8017,Store Retail NOC,2041,Candy/Chocolate Mfg.,2003,Bakery (Wholesale),7
+311411,8810,Clerical Office Employees NOC,9082,Caterer — Full Service,2111,Cannery / Fruit-Vegetable Canning,4
+311412,8810,Clerical Office Employees NOC,8017,Store Retail NOC,8078,Ice Cream Stores,9
+311421,2111,Cannery / Fruit-Vegetable Canning,2110,Pickle Mfg.,,,2
+311422,6504,Baby Food Mfg.,2157,Beverage Mfg.,,,2
+311423,8810,Clerical Office Employees NOC,2003,Bakery (Wholesale),,,2
+311511,8810,Clerical Office Employees NOC,,,,,1
+311513,2063,Ice Cream Mfg.,8742,Outside Sales,4511,Analytical Laboratories,4
+311514,8018,Appliance Distributors,8810,Clerical Office Employees NOC,,,2
+311520,8078,Ice Cream Stores,8006,Store — Grocery Retail,8017,Store Retail NOC,9
+311611,8018,Appliance Distributors,,,,,1
+311612,8742,Outside Sales,,,,,1
+311811,2003,Bakery (Wholesale),,,,,1
+311812,2003,Bakery (Wholesale),0897,Barbeque w/ Alcohol Sales,9083,Bakery / Doughnut Mfg.,10
+311813,2003,Bakery (Wholesale),,,,,1
+311820,2016,Cereal or Bar Mfg.,,,,,1
+311821,2003,Bakery (Wholesale),2001,Cracker Mfg.,8017,Store Retail NOC,3
+311824,2002,Pasta or Noodle Mfg.,,,,,1
+311919,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+311920,6504,Baby Food Mfg.,,,,,1
+311930,8810,Clerical Office Employees NOC,8871,Document Preparation Services,0953,Computer System Designers,7
+311941,8742,Outside Sales,6504,Baby Food Mfg.,,,2
+311942,8017,Store Retail NOC,6504,Baby Food Mfg.,8018,Appliance Distributors,3
+311991,9082,Caterer — Full Service,9083,Bakery / Doughnut Mfg.,8810,Clerical Office Employees NOC,4
+311999,8810,Clerical Office Employees NOC,4611,Cosmetics Mfg.,6504,Baby Food Mfg.,3
+312111,8810,Clerical Office Employees NOC,2157,Beverage Mfg.,,,2
+312112,8810,Clerical Office Employees NOC,8006,Store — Grocery Retail,,,2
+312113,2063,Ice Cream Mfg.,,,,,1
+312120,9079,Restaurant / Fast Food,2121,Brewery,,,2
+312130,2142,Alcohol Mfg.,2131,Liquor Bottling,2143,Fruit Juice Mfg.,10
+312140,9079,Restaurant / Fast Food,8742,Outside Sales,9084,Bar/Nightclub/Tavern,10
+313110,2302,Silk Thread/Yarn Mfg.,8810,Clerical Office Employees NOC,,,2
+313210,2220,Carpet or Rug Mfg.,,,,,1
+313220,4299,Books Printing,0281,Paper Mfg.,,,2
+313310,2380,Braid or Fringe Mfg.,,,,,1
+313320,4511,Analytical Laboratories,8810,Clerical Office Employees NOC,,,2
+314120,2501,Auto/Bus/Truck Parts Mfg.,8810,Clerical Office Employees NOC,,,2
+314910,8810,Clerical Office Employees NOC,2501,Auto/Bus/Truck Parts Mfg.,,,2
+314999,8810,Clerical Office Employees NOC,2388,Embroidery / Textile Mfg.,8017,Store Retail NOC,5
+315120,2362,Glove or Mitten Mfg.,,,,,1
+315210,2501,Auto/Bus/Truck Parts Mfg.,8008,Store — Clothing / Shoes,2503,Dressmaking or Tailoring,5
+315220,8810,Clerical Office Employees NOC,2501,Auto/Bus/Truck Parts Mfg.,,,2
+315240,8810,Clerical Office Employees NOC,,,,,1
+315250,8017,Store Retail NOC,2501,Auto/Bus/Truck Parts Mfg.,,,2
+315280,8810,Clerical Office Employees NOC,,,,,1
+315990,8013,Jewelry Retail,8008,Store — Clothing / Shoes,2501,Auto/Bus/Truck Parts Mfg.,6
+316110,8105,Store,8810,Clerical Office Employees NOC,2623,Fur/Leather Apparel Mfg.,3
+316210,8810,Clerical Office Employees NOC,2660,Boot or Shoe Mfg. NOC,,,2
+316990,2688,Glove Mfg.,,,,,1
+316992,2688,Glove Mfg.,8810,Clerical Office Employees NOC,8032,Sewing/Needlework Stores,3
+316998,4902,Fishing Rod/Tackle Mfg.,8810,Clerical Office Employees NOC,2688,Glove Mfg.,3
+321911,3724-EM,Door Installation,,,,,1
+321920,2759,Box Mfg.,2883,Billiard/Pool Table Mfg.,2757,Pallet/Box Mfg. Wooden,3
+321991,8810,Clerical Office Employees NOC,8859,Computer Data Processing,5348,Ceramic Tile / Stone / Mosaic,5
+321992,2802,Carpentry,8810,Clerical Office Employees NOC,,,2
+321999,2883,Billiard/Pool Table Mfg.,2812,Carpentry,2841,Brush or Broom Handle Mfg.,6
+322211,8018,Appliance Distributors,,,,,1
+322212,8810,Clerical Office Employees NOC,,,,,1
+322230,8019,Quick Printing,8017,Store Retail NOC,8018,Appliance Distributors,3
+322291,8810,Clerical Office Employees NOC,,,,,1
+322299,8742,Outside Sales,,,,,1
+323111,4299,Books Printing,8810,Clerical Office Employees NOC,8742,Outside Sales,5
+323113,4299,Books Printing,4295,Cloth Printing,,,2
+323115,0281,Paper Mfg.,,,,,1
+323117,8810,Clerical Office Employees NOC,4299,Books Printing,8871,Document Preparation Services,4
+323120,4307,Bookbinding,8810,Clerical Office Employees NOC,0953,Computer System Designers,3
+324121,5221,Concrete or Cement Work,5201,Concrete or Cement Work,,,2
+324191,8810,Clerical Office Employees NOC,,,,,1
+325100,8810,Clerical Office Employees NOC,,,,,1
+325110,8810,Clerical Office Employees NOC,,,,,1
+325120,4511,Analytical Laboratories,8810,Clerical Office Employees NOC,8742,Outside Sales,5
+325180,8810,Clerical Office Employees NOC,,,,,1
+325193,9079,Restaurant / Fast Food,2121,Brewery,8742,Outside Sales,3
+325199,4611,Cosmetics Mfg.,4511,Analytical Laboratories,0955,Analytical Laboratories,4
+325211,8810,Clerical Office Employees NOC,8018,Appliance Distributors,4459,Cellophane Products Mfg.,3
+325220,4511,Analytical Laboratories,,,,,1
+325314,8810,Clerical Office Employees NOC,,,,,1
+325411,8017,Store Retail NOC,8810,Clerical Office Employees NOC,2041,Candy/Chocolate Mfg.,10
+325412,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,4611,Cosmetics Mfg.,10
+325413,8874,Surgical Appliance Mfg.,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,4
+325414,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,4512,Biomedical Research Lab,4
+325510,8742,Outside Sales,8018,Appliance Distributors,8810,Clerical Office Employees NOC,3
+325611,4611,Cosmetics Mfg.,,,,,1
+325620,8810,Clerical Office Employees NOC,4611,Cosmetics Mfg.,8018,Appliance Distributors,3
+325910,4557,Buffing/Polishing Compounds Mfg.,8810,Clerical Office Employees NOC,8018,Appliance Distributors,4
+325991,8810,Clerical Office Employees NOC,,,,,1
+325992,8810,Clerical Office Employees NOC,5191,Electronic / Precision Equipment Repair,3574,Air/Steam Gauge Mfg.,3
+325998,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,,,2
+326112,8810,Clerical Office Employees NOC,4459,Cellophane Products Mfg.,8742,Outside Sales,4
+326150,8810,Clerical Office Employees NOC,,,,,1
+326199,8810,Clerical Office Employees NOC,,,,,1
+326299,2790,Industrial Mold Mfg.,,,,,1
+327110,4062,Pottery Mfg.,8018,Appliance Distributors,,,2
+327120,4062,Pottery Mfg.,8810,Clerical Office Employees NOC,,,2
+327212,4111,Glass Mfg.,4352,China Decorating,,,2
+327213,8810,Clerical Office Employees NOC,,,,,1
+327215,8018,Appliance Distributors,8810,Clerical Office Employees NOC,8017,Store Retail NOC,3
+327390,8810,Clerical Office Employees NOC,,,,,1
+327991,5348,Ceramic Tile / Stone / Mosaic,8601,Architectural / Engineering Firm,,,2
+331210,3632,Machine Shop NOC,,,,,1
+331410,8810,Clerical Office Employees NOC,,,,,1
+332117,4511,Analytical Laboratories,,,,,1
+332119,3188,Plumbers Supplies,,,,,1
+332213,3122,Cutlery Mfg. NOC,,,,,1
+332215,3122,Cutlery Mfg. NOC,8810,Clerical Office Employees NOC,3066,Household Furniture Mfg.,4
+332216,3629,Precision Machined Parts NOC,8018,Appliance Distributors,3113,Tool Mfg.,3
+332312,3632,Machine Shop NOC,8810,Clerical Office Employees NOC,,,2
+332313,3632,Machine Shop NOC,,,,,1
+332321,3724,Door Installation,8810,Clerical Office Employees NOC,8742,Outside Sales,3
+332322,3076,Airplane,8810,Clerical Office Employees NOC,3067,Sheet Metal Products Mfg.,3
+332323,3365,Welding or Cutting NOC,,,,,1
+332510,2881,Barrel or Cooperage,,,,,1
+332613,3257,Cable or Wire Rope Mfg.,8810,Clerical Office Employees NOC,,,2
+332710,3113,Tool Mfg.,3632,Machine Shop NOC,8810,Clerical Office Employees NOC,3
+332721,3831,Machine Shop,8810,Clerical Office Employees NOC,3632,Machine Shop NOC,5
+332812,8810,Clerical Office Employees NOC,8017,Store Retail NOC,,,2
+332913,5183,Plumbing NOC,,,,,1
+332994,0281,Paper Mfg.,,,,,1
+332996,5183,Plumbing NOC,,,,,1
+332999,3632,Machine Shop NOC,8810,Clerical Office Employees NOC,3040,Iron or Steel,5
+333111,4902,Fishing Rod/Tackle Mfg.,,,,,1
+333112,8810,Clerical Office Employees NOC,3507,Agricultural Machinery Mfg.,,,2
+333241,9083,Bakery / Doughnut Mfg.,0110,Ice Cream Mfg.,2121,Brewery,10
+333242,4299,Books Printing,5191,Electronic / Precision Equipment Repair,4511,Analytical Laboratories,5
+333243,2881,Barrel or Cooperage,2812,Carpentry,2842,Ladder Mfg.,4
+333244,8601,Architectural / Engineering Firm,,,,,1
+333248,8742,Outside Sales,,,,,1
+333249,8742,Outside Sales,,,,,1
+333310,0951,Construction/Project Mgr (CGL),,,,,1
+333314,8810,Clerical Office Employees NOC,4149,Lens Mfg.,3127,Optical Instrument and Lens Mfg.,4
+333316,3681,Printed Circuit Board Mfg.,8810,Clerical Office Employees NOC,,,2
+333318,8742,Outside Sales,,,,,1
+333413,8810,Clerical Office Employees NOC,,,,,1
+333414,4511,Analytical Laboratories,,,,,1
+333415,8742,Outside Sales,,,,,1
+333511,8810,Clerical Office Employees NOC,3113,Tool Mfg.,8018,Appliance Distributors,3
+333515,3632,Machine Shop NOC,,,,,1
+333517,4114,Bottle & Jar Mfg.,8742,Outside Sales,0926,Fire Extinguishers,3
+333612,3632,Machine Shop NOC,,,,,1
+333613,0955,Analytical Laboratories,,,,,1
+333618,8810,Clerical Office Employees NOC,8018,Appliance Distributors,,,2
+333914,3612,Air/Gas Compressors Mfg.,8810,Clerical Office Employees NOC,,,2
+333922,8603,Architectural/Engineering Firm,8810,Clerical Office Employees NOC,8018,Appliance Distributors,4
+333991,8810,Clerical Office Employees NOC,,,,,1
+333992,3076,Airplane,8810,Clerical Office Employees NOC,3040,Iron or Steel,3
+333994,4511,Analytical Laboratories,,,,,1
+333995,8810,Clerical Office Employees NOC,3634,Sprinkler Head Mfg.,8871,Document Preparation Services,3
+333998,3681,Printed Circuit Board Mfg.,3022,Fabricated Metal Plate Work,8810,Clerical Office Employees NOC,4
+333999,8859,Computer Data Processing,8810,Clerical Office Employees NOC,3632,Machine Shop NOC,4
+334111,3574,Air/Steam Gauge Mfg.,8810,Clerical Office Employees NOC,,,2
+334112,4511,Analytical Laboratories,8859,Computer Data Processing,,,2
+334118,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8601,Architectural / Engineering Firm,6
+334220,8810,Clerical Office Employees NOC,3681,Printed Circuit Board Mfg.,8859,Computer Data Processing,4
+334290,8601,Architectural / Engineering Firm,3681,Printed Circuit Board Mfg.,3146,Hardware Mfg. NOC,4
+334310,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8859,Computer Data Processing,10
+334413,3179,Alarm Mfg.,,,,,1
+334417,3651,Electric Wire Harness Mfg.,8810,Clerical Office Employees NOC,8742,Outside Sales,3
+334418,3681,Printed Circuit Board Mfg.,8810,Clerical Office Employees NOC,0953,Computer System Designers,5
+334419,8810,Clerical Office Employees NOC,3178,Electronic Capacitor Mfg.,3685,Lab Instrument Mfg.,10
+334510,8742,Outside Sales,,,,,1
+334511,8810,Clerical Office Employees NOC,3685,Lab Instrument Mfg.,0953,Computer System Designers,3
+334512,3126,Tool Mfg.,8810,Clerical Office Employees NOC,,,2
+334513,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,4511,Analytical Laboratories,4
+334515,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+334516,3572,Medical/Dental Equipment Mfg.,8810,Clerical Office Employees NOC,3681,Printed Circuit Board Mfg.,7
+334519,8810,Clerical Office Employees NOC,3572,Medical/Dental Equipment Mfg.,4511,Analytical Laboratories,10
+334614,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,5
+335121,8810,Clerical Office Employees NOC,3180,Electric Lighting Fixtures Mfg.,3191,Electric/Gas Lighting Fixtures,5
+335122,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,,,2
+335129,8859,Computer Data Processing,8742,Outside Sales,8810,Clerical Office Employees NOC,3
+335132,8810,Clerical Office Employees NOC,,,,,1
+335210,3632,Machine Shop NOC,8810,Clerical Office Employees NOC,,,2
+335220,8803,Accounting Services (traveling),8810,Clerical Office Employees NOC,3724,Door Installation,3
+335314,3643,Electrical Transmission Mfg.,,,,,1
+335911,8871,Document Preparation Services,5191,Electronic / Precision Equipment Repair,8810,Clerical Office Employees NOC,3
+335921,8810,Clerical Office Employees NOC,7600,Communication Equipment Installation,8742,Outside Sales,3
+335931,4470,Cable Mfg.,,,,,1
+335999,8810,Clerical Office Employees NOC,3179,Alarm Mfg.,8803,Accounting Services (traveling),4
+336111,8390,Auto Van Conversion,8742,Outside Sales,8810,Clerical Office Employees NOC,3
+336112,3824,Auto/Bus/Truck Body Mfg.,3815,Light Truck/Utility Vehicle Mfg.,,,2
+336120,0953,Computer System Designers,,,,,1
+336211,3808,Automobile Mfg. or Assembly,8810,Clerical Office Employees NOC,,,2
+336214,0451,Mobile Home Mfg.,,,,,1
+336320,8810,Clerical Office Employees NOC,3681,Printed Circuit Board Mfg.,8601,Architectural / Engineering Firm,5
+336340,8810,Clerical Office Employees NOC,,,,,1
+336350,8292,Warehousing NOC,,,,,1
+336390,8810,Clerical Office Employees NOC,3632,Machine Shop NOC,,,2
+336411,8601,Architectural / Engineering Firm,8810,Clerical Office Employees NOC,3681,Printed Circuit Board Mfg.,7
+336413,8810,Clerical Office Employees NOC,,,,,1
+336414,8859,Computer Data Processing,8742,Outside Sales,8810,Clerical Office Employees NOC,5
+336611,9521,Advertising Display Install,,,,,1
+336612,3629,Precision Machined Parts NOC,8380,Tire Dealer — Retail,8810,Clerical Office Employees NOC,3
+336991,3632,Machine Shop NOC,8810,Clerical Office Employees NOC,3865,Baby Carriage Mfg.,7
+336992,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,,,2
+336999,3632,Machine Shop NOC,,,,,1
+337110,2812,Carpentry,2881,Barrel or Cooperage,2883,Billiard/Pool Table Mfg.,9
+337120,2881,Barrel or Cooperage,,,,,1
+337121,9522,Auto/Truck Body Mfg.,8810,Clerical Office Employees NOC,2883,Billiard/Pool Table Mfg.,3
+337122,2881,Barrel or Cooperage,2883,Billiard/Pool Table Mfg.,8810,Clerical Office Employees NOC,4
+337126,2883,Billiard/Pool Table Mfg.,,,,,1
+337211,2881,Barrel or Cooperage,2883,Billiard/Pool Table Mfg.,8810,Clerical Office Employees NOC,3
+337212,2802,Carpentry,,,,,1
+337910,8810,Clerical Office Employees NOC,,,,,1
+337920,8810,Clerical Office Employees NOC,9521,Advertising Display Install,3146,Hardware Mfg. NOC,3
+339112,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,8601,Architectural / Engineering Firm,5
+339113,3682,Surgical/Medical Instrument Mfg.,8810,Clerical Office Employees NOC,4484,Bottle & Jar Mfg.,10
+339114,8810,Clerical Office Employees NOC,8742,Outside Sales,4692,Dental Laboratory,5
+339115,8013,Jewelry Retail,8810,Clerical Office Employees NOC,4150,Lens Mfg.,6
+339116,4692,Dental Laboratory,8810,Clerical Office Employees NOC,,,2
+339910,8742,Outside Sales,3383,Costume Jewelry Mfg.,,,2
+339911,8013,Jewelry Retail,,,,,1
+339920,8017,Store Retail NOC,8810,Clerical Office Employees NOC,0953,Computer System Designers,3
+339930,8810,Clerical Office Employees NOC,,,,,1
+339940,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+339950,8810,Clerical Office Employees NOC,,,,,1
+339991,4484,Bottle & Jar Mfg.,,,,,1
+339992,8018,Appliance Distributors,2923,Musical Instrument Mfg.,8810,Clerical Office Employees NOC,8
+339999,4558,Caulking/Putty Mfg.,2881,Barrel or Cooperage,,,2
+423110,8389,Air Conditioning Systems,8046,Motor Vehicle Parts (Used),8810,Clerical Office Employees NOC,3
+423120,8391,Auto Repair / Sales / Service,,,,,1
+423210,8810,Clerical Office Employees NOC,,,,,1
+423220,8810,Clerical Office Employees NOC,,,,,1
+423310,8810,Clerical Office Employees NOC,2802,Carpentry,,,2
+423320,8059,Store,8058,Hardware Stores,8810,Clerical Office Employees NOC,3
+423330,3179,Alarm Mfg.,8742,Outside Sales,,,2
+423390,2881,Barrel or Cooperage,8810,Clerical Office Employees NOC,,,2
+423410,8071,Books & Magazine Stores,8017,Store Retail NOC,8810,Clerical Office Employees NOC,3
+423420,8810,Clerical Office Employees NOC,8742,Outside Sales,8018,Appliance Distributors,5
+423430,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+423440,8742,Outside Sales,8810,Clerical Office Employees NOC,9519,Air Conditioning Portable Units,4
+423450,8810,Clerical Office Employees NOC,8044,Consumer Electronics Rental,4692,Dental Laboratory,8
+423460,8810,Clerical Office Employees NOC,4150,Lens Mfg.,,,2
+423490,8018,Appliance Distributors,,,,,1
+423610,8810,Clerical Office Employees NOC,8018,Appliance Distributors,3574,Air/Steam Gauge Mfg.,5
+423620,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8742,Outside Sales,6
+423690,8810,Clerical Office Employees NOC,0953,Computer System Designers,,,2
+423710,5191,Electronic / Precision Equipment Repair,8017,Store Retail NOC,,,2
+423720,8017,Store Retail NOC,,,,,1
+423730,8292,Warehousing NOC,8810,Clerical Office Employees NOC,,,2
+423740,8010,Air Conditioning Equipment,7380,Drivers / Distributing Cos.,,,2
+423820,8116,Farm Machinery Dealer,8810,Clerical Office Employees NOC,8010,Air Conditioning Equipment,4
+423830,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+423840,8742,Outside Sales,8810,Clerical Office Employees NOC,8018,Appliance Distributors,3
+423850,8810,Clerical Office Employees NOC,3724,Door Installation,,,2
+423860,8810,Clerical Office Employees NOC,8018,Appliance Distributors,3574,Air/Steam Gauge Mfg.,3
+423910,8810,Clerical Office Employees NOC,,,,,1
+423920,8810,Clerical Office Employees NOC,8017,Store Retail NOC,0953,Computer System Designers,8
+423930,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),,,2
+423940,8013,Jewelry Retail,8810,Clerical Office Employees NOC,8742,Outside Sales,9
+423990,8742,Outside Sales,8810,Clerical Office Employees NOC,,,2
+424110,8071,Books & Magazine Stores,8018,Appliance Distributors,8810,Clerical Office Employees NOC,3
+424120,8810,Clerical Office Employees NOC,,,,,1
+424210,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8742,Outside Sales,3
+424310,8018,Appliance Distributors,8008,Store — Clothing / Shoes,8859,Computer Data Processing,5
+424320,8810,Clerical Office Employees NOC,8742,Outside Sales,8008,Store — Clothing / Shoes,5
+424330,8810,Clerical Office Employees NOC,8809,Executive Officers NOC,,,2
+424340,8032,Sewing/Needlework Stores,8810,Clerical Office Employees NOC,,,2
+424350,8810,Clerical Office Employees NOC,8742,Outside Sales,8032,Sewing/Needlework Stores,4
+424410,8018,Appliance Distributors,8742,Outside Sales,8810,Clerical Office Employees NOC,5
+424420,8018,Appliance Distributors,8017,Store Retail NOC,8810,Clerical Office Employees NOC,3
+424430,8006,Store — Grocery Retail,8742,Outside Sales,7198,Trucking,4
+424450,8018,Appliance Distributors,8017,Store Retail NOC,8810,Clerical Office Employees NOC,5
+424460,8810,Clerical Office Employees NOC,8021,Store,8018,Appliance Distributors,3
+424470,8810,Clerical Office Employees NOC,8742,Outside Sales,8021,Store,7
+424480,8006,Store — Grocery Retail,0917,House Cleaning,8209,Vegetable Packing,7
+424490,8017,Store Retail NOC,,,,,1
+424500,8742,Outside Sales,,,,,1
+424510,8810,Clerical Office Employees NOC,,,,,1
+424610,8018,Appliance Distributors,4299,Books Printing,8810,Clerical Office Employees NOC,3
+424690,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8742,Outside Sales,3
+424810,8742,Outside Sales,8810,Clerical Office Employees NOC,,,2
+424820,8810,Clerical Office Employees NOC,8742,Outside Sales,8017,Store Retail NOC,3
+424910,8018,Appliance Distributors,8810,Clerical Office Employees NOC,8004,Store,3
+424920,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8017,Store Retail NOC,5
+424930,8810,Clerical Office Employees NOC,8001,Store — Florist,0005,Farm,6
+424940,8810,Clerical Office Employees NOC,8017,Store Retail NOC,8292,Warehousing NOC,4
+424990,8032,Sewing/Needlework Stores,,,,,1
+425110,8810,Clerical Office Employees NOC,8742,Outside Sales,8018,Appliance Distributors,5
+425120,8742,Outside Sales,8810,Clerical Office Employees NOC,8018,Appliance Distributors,5
+441110,8017,Store Retail NOC,8810,Clerical Office Employees NOC,,,2
+441120,8748,Boat / RV / Used Vehicle Dealer,,,,,1
+441210,8748,Boat / RV / Used Vehicle Dealer,8393,Automobile Body Repair,8380,Tire Dealer — Retail,4
+441221,8017,Store Retail NOC,8010,Air Conditioning Equipment,,,2
+441222,8810,Clerical Office Employees NOC,,,,,1
+441227,8400,Motorcycle/ATV Dealer,8748,Boat / RV / Used Vehicle Dealer,8810,Clerical Office Employees NOC,4
+441228,8046,Motor Vehicle Parts (Used),8810,Clerical Office Employees NOC,8380,Tire Dealer — Retail,6
+441310,8046,Motor Vehicle Parts (Used),8810,Clerical Office Employees NOC,8387,Automobile Car Wash,10
+441320,8380,Tire Dealer — Retail,8810,Clerical Office Employees NOC,8018,Appliance Distributors,3
+441330,8046,Motor Vehicle Parts (Used),8810,Clerical Office Employees NOC,8387,Automobile Car Wash,4
+441340,8380,Tire Dealer — Retail,8391,Auto Repair / Sales / Service,,,2
+442110,8754,Store,8044,Consumer Electronics Rental,,,2
+442210,8017,Store Retail NOC,,,,,1
+442291,8810,Clerical Office Employees NOC,,,,,1
+442299,8039,Store — Department Retail,8810,Clerical Office Employees NOC,,,2
+443141,8017,Store Retail NOC,5191,Electronic / Precision Equipment Repair,,,2
+443142,8017,Store Retail NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,10
+444110,8810,Clerical Office Employees NOC,8058,Hardware Stores,8742,Outside Sales,3
+444120,8810,Clerical Office Employees NOC,4279,Abrasive Paper Preparation,8391,Auto Repair / Sales / Service,3
+444130,8010,Air Conditioning Equipment,7998,Fire Protection Equipment,8810,Clerical Office Employees NOC,4
+444140,8017,Store Retail NOC,,,,,1
+444180,8018,Appliance Distributors,8017,Store Retail NOC,,,2
+444190,8810,Clerical Office Employees NOC,8017,Store Retail NOC,8010,Air Conditioning Equipment,8
+444210,8810,Clerical Office Employees NOC,,,,,1
+444220,8017,Store Retail NOC,,,,,1
+444240,8017,Store Retail NOC,,,,,1
+445110,8006,Store — Grocery Retail,8017,Store Retail NOC,,,2
+445120,9079,Restaurant / Fast Food,8006,Store — Grocery Retail,,,2
+445131,9079,Restaurant / Fast Food,,,,,1
+445132,5192,Coffee Service Cos.,,,,,1
+445210,8031,Cold Storage Locker,8810,Clerical Office Employees NOC,0915,Fish and Seafood Markets,3
+445220,8031,Cold Storage Locker,,,,,1
+445230,8006,Store — Grocery Retail,9083,Bakery / Doughnut Mfg.,8017,Store Retail NOC,5
+445240,8031,Cold Storage Locker,8033,Grocery Stores,,,2
+445250,8031,Cold Storage Locker,,,,,1
+445291,2003,Bakery (Wholesale),8810,Clerical Office Employees NOC,8078,Ice Cream Stores,6
+445292,8017,Store Retail NOC,8006,Store — Grocery Retail,2041,Candy/Chocolate Mfg.,9
+445298,9079,Restaurant / Fast Food,,,,,1
+445299,8018,Appliance Distributors,8017,Store Retail NOC,8006,Store — Grocery Retail,3
+445310,8017,Store Retail NOC,9084,Bar/Nightclub/Tavern,9080,Dance Halls/Discos,10
+445320,8017,Store Retail NOC,8060,Beer or Ale Dealer,9084,Bar/Nightclub/Tavern,7
+446110,8045,Store — Drug Retail,,,,,1
+446120,8810,Clerical Office Employees NOC,8017,Store Retail NOC,,,2
+446130,8013,Jewelry Retail,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,4
+446191,9079,Restaurant / Fast Food,8810,Clerical Office Employees NOC,8809,Executive Officers NOC,4
+446199,8810,Clerical Office Employees NOC,8742,Outside Sales,2501,Auto/Bus/Truck Parts Mfg.,5
+447110,8006,Store — Grocery Retail,8381,Auto Repair Shops,,,2
+447190,8006,Store — Grocery Retail,8387,Automobile Car Wash,8324,Auto Gas Station (No Repair),4
+448110,8032,Sewing/Needlework Stores,,,,,1
+448120,8008,Store — Clothing / Shoes,8017,Store Retail NOC,,,2
+448130,8008,Store — Clothing / Shoes,,,,,1
+448140,8008,Store — Clothing / Shoes,8032,Sewing/Needlework Stores,8810,Clerical Office Employees NOC,3
+448150,8008,Store — Clothing / Shoes,8013,Jewelry Retail,8032,Sewing/Needlework Stores,3
+448190,8008,Store — Clothing / Shoes,,,,,1
+448210,8008,Store — Clothing / Shoes,8810,Clerical Office Employees NOC,,,2
+448310,8013,Jewelry Retail,,,,,1
+448320,2688,Glove Mfg.,8008,Store — Clothing / Shoes,8810,Clerical Office Employees NOC,3
+449110,8044,Consumer Electronics Rental,8017,Store Retail NOC,8810,Clerical Office Employees NOC,8
+449121,8017,Store Retail NOC,8810,Clerical Office Employees NOC,4295,Cloth Printing,3
+449122,9521,Advertising Display Install,2501,Auto/Bus/Truck Parts Mfg.,8017,Store Retail NOC,3
+449129,8810,Clerical Office Employees NOC,8017,Store Retail NOC,2388,Embroidery / Textile Mfg.,4
+449210,8017,Store Retail NOC,8742,Outside Sales,8810,Clerical Office Employees NOC,3
+451110,8017,Store Retail NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,4
+451120,4653,Glue Mfg.,8810,Clerical Office Employees NOC,,,2
+451130,8008,Store — Clothing / Shoes,,,,,1
+451140,8017,Store Retail NOC,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,5
+451211,8017,Store Retail NOC,,,,,1
+451220,8838,Public Museum,8017,Store Retail NOC,,,2
+452210,8017,Store Retail NOC,,,,,1
+452311,8859,Computer Data Processing,,,,,1
+452319,8017,Store Retail NOC,,,,,1
+453110,8001,Store — Florist,,,,,1
+453210,8810,Clerical Office Employees NOC,8017,Store Retail NOC,,,2
+453220,8017,Store Retail NOC,,,,,1
+453310,8017,Store Retail NOC,8810,Clerical Office Employees NOC,,,2
+453910,8017,Store Retail NOC,8742,Outside Sales,8810,Clerical Office Employees NOC,3
+453920,8017,Store Retail NOC,,,,,1
+453930,9015,Buildings NOC,9012,Apartment / Condo Operation,,,2
+453991,8017,Store Retail NOC,0928,Pet Walking and Sitting,0917,House Cleaning,4
+453998,8017,Store Retail NOC,8810,Clerical Office Employees NOC,8008,Store — Clothing / Shoes,10
+454110,8810,Clerical Office Employees NOC,8018,Appliance Distributors,8008,Store — Clothing / Shoes,5
+454111,8810,Clerical Office Employees NOC,,,,,1
+454112,8008,Store — Clothing / Shoes,8018,Appliance Distributors,,,2
+454113,8810,Clerical Office Employees NOC,,,,,1
+454190,8810,Clerical Office Employees NOC,8018,Appliance Distributors,,,2
+454210,5192,Coffee Service Cos.,,,,,1
+454310,8018,Appliance Distributors,0928,Pet Walking and Sitting,,,2
+454390,8752,Household Furnishings Dealer,,,,,1
+455219,8810,Clerical Office Employees NOC,,,,,1
+456110,8810,Clerical Office Employees NOC,8045,Store — Drug Retail,,,2
+456120,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,,,2
+456130,8013,Jewelry Retail,8832,Physician / Dentist Office,,,2
+456191,8810,Clerical Office Employees NOC,,,,,1
+456199,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,,,2
+457110,8006,Store — Grocery Retail,8324,Auto Gas Station (No Repair),9083,Bakery / Doughnut Mfg.,5
+457120,8810,Clerical Office Employees NOC,,,,,1
+458110,8008,Store — Clothing / Shoes,8017,Store Retail NOC,,,2
+458210,8810,Clerical Office Employees NOC,,,,,1
+458310,8013,Jewelry Retail,8810,Clerical Office Employees NOC,3383,Costume Jewelry Mfg.,7
+458320,8017,Store Retail NOC,,,,,1
+459110,8008,Store — Clothing / Shoes,,,,,1
+459120,8018,Appliance Distributors,,,,,1
+459130,8017,Store Retail NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,3
+459140,8017,Store Retail NOC,0928,Pet Walking and Sitting,2923,Musical Instrument Mfg.,4
+459210,8017,Store Retail NOC,,,,,1
+459310,8001,Store — Florist,8810,Clerical Office Employees NOC,0035,Bulb or Flower Farm,3
+459410,8017,Store Retail NOC,0952,Computer Device Install/Inspect,,,2
+459420,8017,Store Retail NOC,8001,Store — Florist,,,2
+459510,8008,Store — Clothing / Shoes,,,,,1
+459910,8017,Store Retail NOC,,,,,1
+459920,8046,Motor Vehicle Parts (Used),8017,Store Retail NOC,,,2
+459930,8017,Store Retail NOC,,,,,1
+459991,8017,Store Retail NOC,,,,,1
+459999,8017,Store Retail NOC,8810,Clerical Office Employees NOC,,,2
+481111,8803,Accounting Services (traveling),,,,,1
+481211,8859,Computer Data Processing,8810,Clerical Office Employees NOC,,,2
+484110,8810,Clerical Office Employees NOC,,,,,1
+484121,7219,Trucking NOC,,,,,1
+484122,7219,Trucking NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,3
+484210,0917,House Cleaning,8742,Outside Sales,8293,Storage Warehouse — Furniture,5
+484220,7219,Trucking NOC,,,,,1
+485119,8810,Clerical Office Employees NOC,,,,,1
+485310,8810,Clerical Office Employees NOC,,,,,1
+485320,7370-EM,Taxicab Co.,8859,Computer Data Processing,8810,Clerical Office Employees NOC,3
+485991,8835,Attendant Care / Home Health Care,0815,Automobile,,,2
+485999,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8810-EM,Clerical Office Employees NOC,3
+487110,8810,Clerical Office Employees NOC,7382,Bus Co.,,,2
+488119,8370,Auto Body/Paint/Interior Repair,,,,,1
+488190,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+488410,0953,Computer System Designers,,,,,1
+488510,8810,Clerical Office Employees NOC,8742,Outside Sales,8859,Computer Data Processing,9
+488991,8018,Appliance Distributors,8017,Store Retail NOC,8810,Clerical Office Employees NOC,4
+488999,8017,Store Retail NOC,,,,,1
+491110,8017,Store Retail NOC,4299,Books Printing,,,2
+492000,8810,Clerical Office Employees NOC,,,,,1
+492110,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8017,Store Retail NOC,8
+492190,8810,Clerical Office Employees NOC,,,,,1
+492210,2003,Bakery (Wholesale),8810,Clerical Office Employees NOC,7219,Trucking NOC,4
+493110,8810,Clerical Office Employees NOC,8292,Warehousing NOC,,,2
+493120,8292,Warehousing NOC,8810,Clerical Office Employees NOC,,,2
+493190,8292,Warehousing NOC,8810,Clerical Office Employees NOC,8290,Mini-Storage/Flea Markets,3
+511110,8810,Clerical Office Employees NOC,7610,Duplication Service,8742,Outside Sales,7
+511120,8810,Clerical Office Employees NOC,,,,,1
+511130,8810,Clerical Office Employees NOC,,,,,1
+511191,8018,Appliance Distributors,4299,Books Printing,8810,Clerical Office Employees NOC,3
+511199,8810,Clerical Office Employees NOC,0953,Computer System Designers,,,2
+511210,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8742,Outside Sales,8
+512110,7610,Duplication Service,8810,Clerical Office Employees NOC,9610,Motion Picture,4
+512120,8810,Clerical Office Employees NOC,,,,,1
+512131,9154,Theaters,0928,Pet Walking and Sitting,,,2
+512132,9154,Theaters,,,,,1
+512190,7610,Duplication Service,9610,Motion Picture,,,2
+512191,7607,Audio/Video Post-Production,,,,,1
+512199,0928,Pet Walking and Sitting,0953,Computer System Designers,,,2
+512230,8810,Clerical Office Employees NOC,,,,,1
+512240,4923,Photographic Supplies Mfg.,,,,,1
+512250,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8032,Sewing/Needlework Stores,8
+512290,7610,Duplication Service,,,,,1
+513110,8810,Clerical Office Employees NOC,,,,,1
+513120,8810,Clerical Office Employees NOC,8807,Newspaper/Magazine Publishing,,,2
+513130,8810,Clerical Office Employees NOC,,,,,1
+513140,8810,Clerical Office Employees NOC,,,,,1
+513199,8810,Clerical Office Employees NOC,8864,Adoption Services,8859,Computer Data Processing,4
+513210,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,6
+515111,7610,Duplication Service,,,,,1
+515112,7610,Duplication Service,,,,,1
+515120,7610,Duplication Service,,,,,1
+515210,8723,Insurance Agencies/Brokerages,8803,Accounting Services (traveling),,,2
+516110,7610,Duplication Service,,,,,1
+516120,7610,Duplication Service,9516,Communication Equip Install,,,2
+516210,8810,Clerical Office Employees NOC,7610,Duplication Service,,,2
+517110,7600,Communication Equipment Installation,,,,,1
+517111,8810,Clerical Office Employees NOC,,,,,1
+517112,8810,Clerical Office Employees NOC,,,,,1
+517121,8017,Store Retail NOC,8810,Clerical Office Employees NOC,8871,Document Preparation Services,8
+517122,8017,Store Retail NOC,,,,,1
+517311,8803,Accounting Services (traveling),,,,,1
+517312,8810,Clerical Office Employees NOC,,,,,1
+517410,8859,Computer Data Processing,3178,Electronic Capacitor Mfg.,8601,Architectural / Engineering Firm,5
+517810,8810,Clerical Office Employees NOC,0953,Computer System Designers,8901,Telecom Equipment Providers,4
+517911,8810,Clerical Office Employees NOC,8871,Document Preparation Services,8742,Outside Sales,6
+517919,8810,Clerical Office Employees NOC,7600,Communication Equipment Installation,,,2
+518210,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,8
+519110,8810,Clerical Office Employees NOC,8742,Outside Sales,0953,Computer System Designers,4
+519120,8810,Clerical Office Employees NOC,9101,Schools (Nonprofit) / Adult Day Care,7607,Audio/Video Post-Production,7
+519130,8810,Clerical Office Employees NOC,,,,,1
+519190,8810,Clerical Office Employees NOC,5191,Electronic / Precision Equipment Repair,,,2
+519210,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+519290,8810,Clerical Office Employees NOC,,,,,1
+522110,8810,Clerical Office Employees NOC,8742,Outside Sales,8859,Computer Data Processing,4
+522120,8742,Outside Sales,,,,,1
+522130,8810,Clerical Office Employees NOC,,,,,1
+522180,8803,Accounting Services (traveling),8742,Outside Sales,,,2
+522210,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8803,Accounting Services (traveling),3
+522220,8810,Clerical Office Employees NOC,,,,,1
+522291,8810,Clerical Office Employees NOC,,,,,1
+522292,8810,Clerical Office Employees NOC,8859,Computer Data Processing,,,2
+522293,8810,Clerical Office Employees NOC,,,,,1
+522294,8810,Clerical Office Employees NOC,,,,,1
+522298,8810,Clerical Office Employees NOC,8742,Outside Sales,8859,Computer Data Processing,5
+522310,8742,Outside Sales,8810,Clerical Office Employees NOC,,,2
+522320,8810,Clerical Office Employees NOC,,,,,1
+522390,8810,Clerical Office Employees NOC,,,,,1
+523100,8810,Clerical Office Employees NOC,,,,,1
+523110,8742,Outside Sales,8810,Clerical Office Employees NOC,,,2
+523120,8810,Clerical Office Employees NOC,8871,Document Preparation Services,8859,Computer Data Processing,4
+523130,8810,Clerical Office Employees NOC,,,,,1
+523140,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+523150,8810,Clerical Office Employees NOC,8855,Banks & Trust Cos.,8742,Outside Sales,3
+523160,8810,Clerical Office Employees NOC,,,,,1
+523210,8810,Clerical Office Employees NOC,0953,Computer System Designers,,,2
+523900,8810,Clerical Office Employees NOC,8742,Outside Sales,8871,Document Preparation Services,4
+523910,8810,Clerical Office Employees NOC,,,,,1
+523920,8810,Clerical Office Employees NOC,8742,Outside Sales,8871,Document Preparation Services,3
+523930,8810,Clerical Office Employees NOC,8742,Outside Sales,0953,Computer System Designers,3
+523940,8810,Clerical Office Employees NOC,8742,Outside Sales,0951,Construction/Project Mgr (CGL),3
+523991,8810,Clerical Office Employees NOC,8742,Outside Sales,0953,Computer System Designers,8
+523999,8810,Clerical Office Employees NOC,,,,,1
+524113,8810,Clerical Office Employees NOC,8723,Insurance Agencies/Brokerages,0984,Appraisal Services,3
+524114,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,8871,Document Preparation Services,3
+524126,8810,Clerical Office Employees NOC,8723,Insurance Agencies/Brokerages,8859,Computer Data Processing,5
+524127,8810,Clerical Office Employees NOC,8723,Insurance Agencies/Brokerages,,,2
+524128,8810,Clerical Office Employees NOC,,,,,1
+524130,8723,Insurance Agencies/Brokerages,8859,Computer Data Processing,8810,Clerical Office Employees NOC,3
+524210,8810,Clerical Office Employees NOC,8742,Outside Sales,8723,Insurance Agencies/Brokerages,6
+524291,8810,Clerical Office Employees NOC,8742,Outside Sales,8720,Appraisal Services,3
+524292,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,0953,Computer System Designers,4
+524298,8810,Clerical Office Employees NOC,8723,Insurance Agencies/Brokerages,8742,Outside Sales,4
+525120,8832,Physician / Dentist Office,,,,,1
+525910,8810,Clerical Office Employees NOC,,,,,1
+525920,8820,Attorney — All Employees,8810,Clerical Office Employees NOC,,,2
+525990,8810,Clerical Office Employees NOC,,,,,1
+531110,9015,Buildings NOC,8810,Clerical Office Employees NOC,9012,Apartment / Condo Operation,3
+531120,8810,Clerical Office Employees NOC,9012,Apartment / Condo Operation,8742,Outside Sales,9
+531130,9015,Buildings NOC,9012,Apartment / Condo Operation,,,2
+531190,9032,Sewing/Needlework Stores,9015,Buildings NOC,,,2
+531210,8810,Clerical Office Employees NOC,8742,Outside Sales,8809,Executive Officers NOC,3
+531311,9015,Buildings NOC,8810,Clerical Office Employees NOC,9032,Sewing/Needlework Stores,5
+531312,9032,Sewing/Needlework Stores,9015,Buildings NOC,8810,Clerical Office Employees NOC,3
+531320,8721,Real Estate Activities NOC,8810,Clerical Office Employees NOC,8742,Outside Sales,5
+531390,8810,Clerical Office Employees NOC,,,,,1
+532111,8392,Automobile Parking Lot,8002,Automobile Rental Co.,8810,Clerical Office Employees NOC,4
+532112,8002,Automobile Rental Co.,8046,Motor Vehicle Parts (Used),8380,Tire Dealer — Retail,3
+532120,8810,Clerical Office Employees NOC,8002,Automobile Rental Co.,8385,Ambulance Service,3
+532210,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),,,2
+532281,2503,Dressmaking or Tailoring,,,,,1
+532282,8071,Books & Magazine Stores,,,,,1
+532283,3632,Machine Shop NOC,0952,Computer Device Install/Inspect,,,2
+532284,8017,Store Retail NOC,8025,Bicycle Rentals,8810,Clerical Office Employees NOC,10
+532289,8810,Clerical Office Employees NOC,8044,Consumer Electronics Rental,8017,Store Retail NOC,10
+532299,0922,Store,4361,Commercial Photography,8044,Consumer Electronics Rental,4
+532310,5191,Electronic / Precision Equipment Repair,9426,Portable Toilet Rentals,9521,Advertising Display Install,5
+532411,7403,Airport,,,,,1
+532412,8107,Contractors Equipment Dealer,,,,,1
+532420,8810,Clerical Office Employees NOC,,,,,1
+532490,9516,Communication Equip Install,8017,Store Retail NOC,8810,Clerical Office Employees NOC,9
+533110,8810,Clerical Office Employees NOC,,,,,1
+541110,8820,Attorney — All Employees,8810,Clerical Office Employees NOC,8821,Attorney Support Services,4
+541120,0953,Computer System Designers,8810,Clerical Office Employees NOC,,,2
+541191,8810,Clerical Office Employees NOC,8720,Appraisal Services,,,2
+541199,8820,Attorney — All Employees,,,,,1
+541211,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8871,Document Preparation Services,3
+541213,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8820,Attorney — All Employees,4
+541214,8810,Clerical Office Employees NOC,8871,Document Preparation Services,8742,Outside Sales,3
+541219,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,5
+541300,8803,Accounting Services (traveling),,,,,1
+541310,8601,Architectural / Engineering Firm,8809,Executive Officers NOC,,,2
+541320,0042,Land and Garden Services,8601,Architectural / Engineering Firm,8810,Clerical Office Employees NOC,6
+541330,8601,Architectural / Engineering Firm,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,4
+541340,8810,Clerical Office Employees NOC,8809,Executive Officers NOC,,,2
+541350,8810,Clerical Office Employees NOC,8720,Appraisal Services,,,2
+541360,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8601,Architectural / Engineering Firm,3
+541370,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,8602,Oil or Gas Geologist,3
+541380,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,8832,Physician / Dentist Office,4
+541410,8810,Clerical Office Employees NOC,9014,Janitorial / Buildings by Contractor,5102,Awning/Tent Installation,4
+541420,4299,Books Printing,,,,,1
+541430,8810,Clerical Office Employees NOC,8742,Outside Sales,8859,Computer Data Processing,3
+541490,8601,Architectural / Engineering Firm,,,,,1
+541510,8810,Clerical Office Employees NOC,0953,Computer System Designers,8859,Computer Data Processing,3
+541511,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,7
+541512,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,7
+541513,8810,Clerical Office Employees NOC,,,,,1
+541519,8810,Clerical Office Employees NOC,5191,Electronic / Precision Equipment Repair,8832,Physician / Dentist Office,7
+541600,8810,Clerical Office Employees NOC,,,,,1
+541610,8810,Clerical Office Employees NOC,,,,,1
+541611,8810,Clerical Office Employees NOC,8742,Outside Sales,8832,Physician / Dentist Office,7
+541612,8810,Clerical Office Employees NOC,8742,Outside Sales,0953,Computer System Designers,3
+541613,8810,Clerical Office Employees NOC,8742,Outside Sales,8871,Document Preparation Services,6
+541614,8292,Warehousing NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,3
+541618,8810,Clerical Office Employees NOC,8742,Outside Sales,8803,Accounting Services (traveling),7
+541620,8810,Clerical Office Employees NOC,8601,Architectural / Engineering Firm,4511,Analytical Laboratories,10
+541690,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8742,Outside Sales,7
+541710,8810,Clerical Office Employees NOC,8809,Executive Officers NOC,,,2
+541711,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,,,2
+541712,4511,Analytical Laboratories,4611,Cosmetics Mfg.,8810,Clerical Office Employees NOC,3
+541713,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,4512,Biomedical Research Lab,9
+541714,4511,Analytical Laboratories,8742,Outside Sales,8810,Clerical Office Employees NOC,4
+541715,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,8742,Outside Sales,6
+541720,8810,Clerical Office Employees NOC,,,,,1
+541810,8810,Clerical Office Employees NOC,8742,Outside Sales,0951,Construction/Project Mgr (CGL),4
+541820,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+541830,8871,Document Preparation Services,8810,Clerical Office Employees NOC,,,2
+541840,8810,Clerical Office Employees NOC,8742,Outside Sales,4361,Commercial Photography,6
+541850,8810,Clerical Office Employees NOC,8742,Outside Sales,0953,Computer System Designers,5
+541860,8810,Clerical Office Employees NOC,,,,,1
+541870,8810,Clerical Office Employees NOC,4297,Graphic Design Services,,,2
+541890,8810,Clerical Office Employees NOC,8018,Appliance Distributors,,,2
+541910,8810,Clerical Office Employees NOC,,,,,1
+541921,4361,Commercial Photography,8810,Clerical Office Employees NOC,,,2
+541922,4361,Commercial Photography,8810,Clerical Office Employees NOC,,,2
+541930,8803,Accounting Services (traveling),,,,,1
+541940,8831,Pet Grooming / Veterinarian,8810,Clerical Office Employees NOC,,,2
+541990,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8859,Computer Data Processing,10
+551111,8742,Outside Sales,,,,,1
+551112,8810,Clerical Office Employees NOC,8864,Adoption Services,8832,Physician / Dentist Office,10
+551113,8810,Clerical Office Employees NOC,,,,,1
+551114,8810,Clerical Office Employees NOC,,,,,1
+561110,8810,Clerical Office Employees NOC,8871,Document Preparation Services,8742,Outside Sales,5
+561210,9063,Health or Exercise Institute,8810,Clerical Office Employees NOC,0953,Computer System Designers,10
+561310,8810,Clerical Office Employees NOC,,,,,1
+561311,8810,Clerical Office Employees NOC,,,,,1
+561312,8810,Clerical Office Employees NOC,8859,Computer Data Processing,,,2
+561320,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),0953,Computer System Designers,5
+561330,9063,Health or Exercise Institute,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,3
+561410,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,0953,Computer System Designers,5
+561421,8871,Document Preparation Services,8901,Telecom Equipment Providers,8810,Clerical Office Employees NOC,3
+561422,8810,Clerical Office Employees NOC,8871,Document Preparation Services,0953,Computer System Designers,6
+561431,8017,Store Retail NOC,8800,Mail Box or Packaging Stores,8810,Clerical Office Employees NOC,3
+561439,8810,Clerical Office Employees NOC,4299,Books Printing,,,2
+561440,8810,Clerical Office Employees NOC,8855,Banks & Trust Cos.,9102,Lawn Maintenance,4
+561450,8810,Clerical Office Employees NOC,0953,Computer System Designers,,,2
+561492,8820,Attorney — All Employees,8810,Clerical Office Employees NOC,8871,Document Preparation Services,4
+561499,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,8871,Document Preparation Services,10
+561510,8742,Outside Sales,8810,Clerical Office Employees NOC,0953,Computer System Designers,3
+561520,8810,Clerical Office Employees NOC,8017,Store Retail NOC,0953,Computer System Designers,3
+561591,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+561599,8810,Clerical Office Employees NOC,,,,,1
+561611,8810,Clerical Office Employees NOC,8803,Accounting Services (traveling),8742,Outside Sales,6
+561612,8810,Clerical Office Employees NOC,,,,,1
+561621,7600,Communication Equipment Installation,,,,,1
+561622,8017,Store Retail NOC,,,,,1
+561710,4519,Exterminator,,,,,1
+561720,9014,Janitorial / Buildings by Contractor,8810,Clerical Office Employees NOC,9096,Domestic Workers,4
+561730,0042,Land and Garden Services,9014,Janitorial / Buildings by Contractor,5183,Plumbing NOC,5
+561740,2581,Carpet/Rug Cleaning,,,,,1
+561790,9014,Janitorial / Buildings by Contractor,5491,Paperhanging,8810,Clerical Office Employees NOC,3
+561910,8810,Clerical Office Employees NOC,8742,Outside Sales,8292,Warehousing NOC,8
+561920,8742,Outside Sales,8810,Clerical Office Employees NOC,7610,Duplication Service,8
+561990,9079,Restaurant / Fast Food,8810,Clerical Office Employees NOC,,,2
+562111,8810-EM,Clerical Office Employees NOC,,,,,1
+562119,9014,Janitorial / Buildings by Contractor,,,,,1
+562219,9014,Janitorial / Buildings by Contractor,,,,,1
+562910,9008,Cleaner,4511,Analytical Laboratories,8742,Outside Sales,3
+562991,0917,House Cleaning,,,,,1
+562998,9014,Janitorial / Buildings by Contractor,9403,Garbage or Refuse Dumps,6218,Tank Installation,4
+611000,9101,Schools (Nonprofit) / Adult Day Care,,,,,1
+611110,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,9101,Schools (Nonprofit) / Adult Day Care,3
+611210,8868,Schools — Professional Employees,0965,Education Programs Admin,,,2
+611310,8868,Schools — Professional Employees,,,,,1
+611410,8810,Clerical Office Employees NOC,8859,Computer Data Processing,,,2
+611420,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,8742,Outside Sales,6
+611430,8810,Clerical Office Employees NOC,9063,Health or Exercise Institute,8868,Schools — Professional Employees,6
+611510,9101,Schools (Nonprofit) / Adult Day Care,,,,,1
+611511,9101,Schools (Nonprofit) / Adult Day Care,,,,,1
+611512,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,,,2
+611513,8810,Clerical Office Employees NOC,,,,,1
+611519,8810,Clerical Office Employees NOC,,,,,1
+611610,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,,,2
+611620,9063,Health or Exercise Institute,9060,"Club — Country, Golf, Yacht",8868,Schools — Professional Employees,3
+611630,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,9059,Child Care Center,5
+611691,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,,,2
+611692,8868,Schools — Professional Employees,,,,,1
+611699,9063,Health or Exercise Institute,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,4
+611710,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,8742,Outside Sales,7
+621111,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,4511,Analytical Laboratories,4
+621112,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,9063,Health or Exercise Institute,4
+621210,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,,,2
+621310,8832,Physician / Dentist Office,,,,,1
+621320,8832,Physician / Dentist Office,8013,Jewelry Retail,,,2
+621330,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,8834,Acupressure or Acupuncture,6
+621340,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,8834,Acupressure or Acupuncture,3
+621391,8832,Physician / Dentist Office,,,,,1
+621399,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,8809,Executive Officers NOC,3
+621410,8810,Clerical Office Employees NOC,0953,Computer System Designers,,,2
+621420,8832,Physician / Dentist Office,,,,,1
+621491,8832,Physician / Dentist Office,8834,Acupressure or Acupuncture,,,2
+621492,8834,Acupressure or Acupuncture,,,,,1
+621493,8832,Physician / Dentist Office,,,,,1
+621498,8832,Physician / Dentist Office,,,,,1
+621511,8810,Clerical Office Employees NOC,8742,Outside Sales,8832,Physician / Dentist Office,3
+621512,8832,Physician / Dentist Office,,,,,1
+621610,8828,Homemaker Service,8832,Physician / Dentist Office,8835,Attendant Care / Home Health Care,6
+621910,8832,Physician / Dentist Office,,,,,1
+621991,4511,Analytical Laboratories,8810,Clerical Office Employees NOC,,,2
+621999,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,8871,Document Preparation Services,3
+622110,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,,,2
+622210,8834,Acupressure or Acupuncture,8832,Physician / Dentist Office,,,2
+622310,8832,Physician / Dentist Office,,,,,1
+623110,8829,Convalescent Home,9070,Retirement Living Centers,8834,Acupressure or Acupuncture,6
+623210,8835,Attendant Care / Home Health Care,9101,Schools (Nonprofit) / Adult Day Care,8842,Group Homes,6
+623220,8832,Physician / Dentist Office,8842,Group Homes,8834,Acupressure or Acupuncture,5
+623311,9070,Retirement Living Centers,8842,Group Homes,8869,Children's Play Centers,3
+623312,8826,Rest Home — All Employees,8842,Group Homes,8829,Convalescent Home,7
+623990,8835,Attendant Care / Home Health Care,8834,Acupressure or Acupuncture,8824,Retirement Living Center — Health Care,10
+624110,9063,Health or Exercise Institute,8868,Schools — Professional Employees,,,2
+624120,8826,Rest Home — All Employees,8835,Attendant Care / Home Health Care,,,2
+624190,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,,,2
+624210,8017,Store Retail NOC,,,,,1
+624221,8804,Alcohol/Drug Recovery Home,,,,,1
+624229,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,5645,Carpentry — Residential,6
+624230,8810,Clerical Office Employees NOC,8859,Computer Data Processing,8018,Appliance Distributors,4
+624310,8832,Physician / Dentist Office,8742,Outside Sales,8868,Schools — Professional Employees,6
+624410,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,9101,Schools (Nonprofit) / Adult Day Care,3
+711110,9154,Theaters,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,8
+711120,8868,Schools — Professional Employees,9063,Health or Exercise Institute,9053,Bathhouse,6
+711130,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,0953,Computer System Designers,10
+711190,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,9101,Schools (Nonprofit) / Adult Day Care,10
+711211,9053,Bathhouse,9063,Health or Exercise Institute,8742,Outside Sales,10
+711219,8810,Clerical Office Employees NOC,8742,Outside Sales,7610,Duplication Service,6
+711310,8742,Outside Sales,9084,Bar/Nightclub/Tavern,9154,Theaters,10
+711320,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+711410,8810,Clerical Office Employees NOC,,,,,1
+711510,8810,Clerical Office Employees NOC,,,,,1
+712110,8838,Public Museum,8810,Clerical Office Employees NOC,8068,Art Galleries,10
+712120,8810,Clerical Office Employees NOC,,,,,1
+712130,9097,Aquarium Cleaning Services,0005,Farm,7610,Duplication Service,3
+712190,5645,Carpentry — Residential,,,,,1
+713110,8742,Outside Sales,,,,,1
+713120,8810,Clerical Office Employees NOC,9016,Amusement Park/Exhibition,9063,Health or Exercise Institute,4
+713290,8017,Store Retail NOC,9061,Club NOC,,,2
+713910,9060,"Club — Country, Golf, Yacht",,,,,1
+713930,6836,Boat Storage & Moorage,,,,,1
+713940,9063,Health or Exercise Institute,8810,Clerical Office Employees NOC,9586,Beauty Parlor / Barber Shop / Salon,4
+713950,9093,Bowling Lane,,,,,1
+713990,9016,Amusement Park/Exhibition,9063,Health or Exercise Institute,8742,Outside Sales,3
+721110,9058,Hotel Employees — Restaurant,9052,Hotel,9015,Buildings NOC,3
+721191,9052,Hotel,,,,,1
+721199,8810,Clerical Office Employees NOC,9015,Buildings NOC,0953,Computer System Designers,3
+721211,8017,Store Retail NOC,,,,,1
+721214,8840,Convents or Monasteries,,,,,1
+721310,9061,Club NOC,,,,,1
+722211,9083,Bakery / Doughnut Mfg.,9079,Restaurant / Fast Food,0897,Barbeque w/ Alcohol Sales,5
+722213,9083,Bakery / Doughnut Mfg.,9079,Restaurant / Fast Food,,,2
+722310,9083,Bakery / Doughnut Mfg.,9082,Caterer — Full Service,9079,Restaurant / Fast Food,10
+722320,9079,Restaurant / Fast Food,9082,Caterer — Full Service,,,2
+722330,9079,Restaurant / Fast Food,,,,,1
+722410,9079,Restaurant / Fast Food,8810,Clerical Office Employees NOC,,,2
+722511,9079,Restaurant / Fast Food,9014,Janitorial / Buildings by Contractor,8810,Clerical Office Employees NOC,3
+722513,9079,Restaurant / Fast Food,9082,Caterer — Full Service,8017,Store Retail NOC,4
+722514,9083,Bakery / Doughnut Mfg.,8017,Store Retail NOC,9071,Brew Pubs,9
+722515,8017,Store Retail NOC,9079,Restaurant / Fast Food,6504,Baby Food Mfg.,3
+811111,8391,Auto Repair / Sales / Service,8810,Clerical Office Employees NOC,3632,Machine Shop NOC,3
+811112,8389,Air Conditioning Systems,,,,,1
+811114,8391,Auto Repair / Sales / Service,,,,,1
+811118,8380,Tire Dealer — Retail,8810,Clerical Office Employees NOC,8389,Air Conditioning Systems,7
+811121,8391,Auto Repair / Sales / Service,8742,Outside Sales,,,2
+811122,8380,Tire Dealer — Retail,8810,Clerical Office Employees NOC,8393,Automobile Body Repair,3
+811191,8380,Tire Dealer — Retail,8389,Air Conditioning Systems,,,2
+811192,8387,Automobile Car Wash,,,,,1
+811198,8387,Automobile Car Wash,8393,Automobile Body Repair,,,2
+811210,8810,Clerical Office Employees NOC,,,,,1
+811211,8017,Store Retail NOC,8018,Appliance Distributors,8810,Clerical Office Employees NOC,7
+811212,8017,Store Retail NOC,,,,,1
+811213,8017,Store Retail NOC,9516,Communication Equip Install,8901,Telecom Equipment Providers,7
+811219,5191,Electronic / Precision Equipment Repair,8810,Clerical Office Employees NOC,,,2
+811310,3632,Machine Shop NOC,,,,,1
+811411,8010,Air Conditioning Equipment,7605,Burglar Alarm Install / Repair,9097,Aquarium Cleaning Services,8
+811412,9519,Air Conditioning Portable Units,3724,Door Installation,8810,Clerical Office Employees NOC,5
+811420,9522,Auto/Truck Body Mfg.,8810,Clerical Office Employees NOC,,,2
+811430,8008,Store — Clothing / Shoes,8017,Store Retail NOC,8810,Clerical Office Employees NOC,3
+811490,0917,House Cleaning,8017,Store Retail NOC,8010,Air Conditioning Equipment,10
+812111,9586,Beauty Parlor / Barber Shop / Salon,,,,,1
+812112,9586,Beauty Parlor / Barber Shop / Salon,8832,Physician / Dentist Office,,,2
+812113,9586,Beauty Parlor / Barber Shop / Salon,,,,,1
+812120,9586,Beauty Parlor / Barber Shop / Salon,,,,,1
+812190,9063,Health or Exercise Institute,,,,,1
+812191,8832,Physician / Dentist Office,,,,,1
+812199,9586,Beauty Parlor / Barber Shop / Salon,9079,Restaurant / Fast Food,9063,Health or Exercise Institute,5
+812210,8810,Clerical Office Employees NOC,,,,,1
+812220,9620,Undertaker / Funeral Home,,,,,1
+812310,2583,Cleaning or Dyeing,8017,Store Retail NOC,8742,Outside Sales,3
+812320,2583,Cleaning or Dyeing,2590,Laundry and Dry Cleaning,8809,Executive Officers NOC,3
+812331,2585,Carpet/Rug Cleaning,8017,Store Retail NOC,,,2
+812910,8831,Pet Grooming / Veterinarian,8017,Store Retail NOC,9014,Janitorial / Buildings by Contractor,5
+812920,8831,Pet Grooming / Veterinarian,,,,,1
+812921,4360,Duplication Service,8017,Store Retail NOC,8810,Clerical Office Employees NOC,3
+812930,8392,Automobile Parking Lot,8810,Clerical Office Employees NOC,9015,Buildings NOC,3
+812990,9063,Health or Exercise Institute,5102,Awning/Tent Installation,8810,Clerical Office Employees NOC,8
+813110,8868,Schools — Professional Employees,8810,Clerical Office Employees NOC,9101,Schools (Nonprofit) / Adult Day Care,7
+813120,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,,,2
+813190,8810,Clerical Office Employees NOC,,,,,1
+813211,8810,Clerical Office Employees NOC,,,,,1
+813212,8810,Clerical Office Employees NOC,,,,,1
+813219,8810,Clerical Office Employees NOC,,,,,1
+813311,8820,Attorney — All Employees,,,,,1
+813312,8810,Clerical Office Employees NOC,8742,Outside Sales,8868,Schools — Professional Employees,10
+813319,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,8820,Attorney — All Employees,3
+813410,8742,Outside Sales,8810,Clerical Office Employees NOC,8868,Schools — Professional Employees,4
+813910,8810,Clerical Office Employees NOC,8742,Outside Sales,9061,Club NOC,10
+813920,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,,,2
+813930,8755,Labor Union,8810,Clerical Office Employees NOC,,,2
+813940,9061,Club NOC,8810,Clerical Office Employees NOC,,,2
+813990,8810,Clerical Office Employees NOC,,,,,1
+814110,0917,House Cleaning,8810,Clerical Office Employees NOC,9011,Apartment/Condo Complex,10
+921110,8810,Clerical Office Employees NOC,9012,Apartment / Condo Operation,,,2
+921120,8742,Outside Sales,8810,Clerical Office Employees NOC,,,2
+921130,8742,Outside Sales,,,,,1
+921150,8810,Clerical Office Employees NOC,0042,Land and Garden Services,,,2
+921190,8810,Clerical Office Employees NOC,8832,Physician / Dentist Office,8834,Acupressure or Acupuncture,7
+922130,8820,Attorney — All Employees,8810,Clerical Office Employees NOC,,,2
+922160,7605,Burglar Alarm Install / Repair,8742,Outside Sales,8810,Clerical Office Employees NOC,5
+923110,8810,Clerical Office Employees NOC,8742,Outside Sales,8840,Convents or Monasteries,4
+923120,8871,Document Preparation Services,8810,Clerical Office Employees NOC,8742,Outside Sales,5
+923130,8742,Outside Sales,8832,Physician / Dentist Office,8810,Clerical Office Employees NOC,8
+923140,8832,Physician / Dentist Office,,,,,1
+924120,8810,Clerical Office Employees NOC,,,,,1
+925110,8871,Document Preparation Services,8810,Clerical Office Employees NOC,,,2
+925120,8810,Clerical Office Employees NOC,,,,,1
+926110,8810,Clerical Office Employees NOC,8742,Outside Sales,,,2
+926130,8742,Outside Sales,,,,,1
+926140,8017,Store Retail NOC,8810,Clerical Office Employees NOC,,,2
+926150,8018,Appliance Distributors,8810,Clerical Office Employees NOC,,,2
+927110,8810,Clerical Office Employees NOC,,,,,1
+928110,8859,Computer Data Processing,8601,Architectural / Engineering Firm,8810,Clerical Office Employees NOC,4
+928120,8820,Attorney — All Employees,8810,Clerical Office Employees NOC,8871,Document Preparation Services,4
+999999,9102,Lawn Maintenance,9061,Club NOC,8810,Clerical Office Employees NOC,4
