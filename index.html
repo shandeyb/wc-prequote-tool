@@ -471,6 +471,23 @@
     border: 1px solid var(--guava-40);
   }
 
+  /* Review badge */
+  .review-badge {
+    background: #fff8e6;
+    color: var(--warning);
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+  }
+
+  .alert-warning {
+    background: #fff8e6;
+    color: var(--warning);
+    border: 1px solid #f0d060;
+  }
+
   /* Spinner */
   .spinner {
     display: inline-block;
@@ -513,7 +530,7 @@
   <span class="header-logo">gusto</span>
   <div class="header-divider"></div>
   <span class="header-title">WC Prequote Template Generator</span>
-  <span class="header-badge">TX · v1</span>
+  <span class="header-badge">TX · v2</span>
 </div>
 
 <div class="container">
@@ -642,6 +659,7 @@ let currentStep = 1;
 let parsedEmployees = [];
 let predictions = [];
 let aggregated = [];
+let reviewItems = [];
 
 // ---- Navigation ----
 function goToStep(step) {
@@ -702,7 +720,9 @@ function parseEmployeeData() {
   const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
   if (lines.length < 2) return [];
 
-  const sep = lines[0].includes('\t') ? '\t' : ',';
+  const candidates = ['\t', ';', ','];
+  const sample = (lines[0] + '\n' + (lines[1] || ''));
+  const sep = candidates.find(d => sample.includes(d)) || ',';
   const headers = lines[0].split(sep).map(h => h.trim().toUpperCase().replace(/['"]/g, ''));
 
   const titleIdx = headers.findIndex(h => h.includes('EMPLOYEE_TITLE') || h === 'TITLE' || h === 'JOB_TITLE');
@@ -744,172 +764,266 @@ function updateDataInfo() {
 
 document.getElementById('employeeData').addEventListener('input', updateDataInfo);
 
-// ==== CLIENT-SIDE CLASSIFICATION ENGINE (v4) ====
+// ==== CLIENT-SIDE CLASSIFICATION ENGINE (v5) ====
+// Driven by naics_to_class_codes_wide.csv (876 NAICS, loaded at startup).
+// Rules source: tx_wc_rules_v5.md from class-code-predictor skill.
 
-// Package codes — ALL employees get this code regardless of title
-const PACKAGE_CODES = new Set(['8832', '8820', '9060']);
+// NAICS lookup populated from CSV at load time
+const naicsMap = new Map();
+let csvLoadMode = 'loading'; // 'csv' | 'fallback'
 
-// Step 1: NAICS-first industry mapping
-const NAICS_MAP = {
-  // Healthcare offices → 8832 Physician (package)
-  '621111': { code: '8832', desc: 'Physician — Package', package: true },
-  '621112': { code: '8832', desc: 'Physician — Package', package: true },
-  '621210': { code: '8832', desc: 'Physician — Package', package: true },
-  '621310': { code: '8832', desc: 'Physician — Package', package: true },
-  '621320': { code: '8832', desc: 'Physician — Package', package: true },
-  '621330': { code: '8832', desc: 'Physician — Package', package: true },
-  '621340': { code: '8832', desc: 'Physician — Package', package: true },
-  '621391': { code: '8832', desc: 'Physician — Package', package: true },
-  '621399': { code: '8832', desc: 'Physician — Package', package: true },
-  '621420': { code: '8832', desc: 'Physician — Package', package: true },
-  '621491': { code: '8832', desc: 'Physician — Package', package: true },
-  '621493': { code: '8832', desc: 'Physician — Package', package: true },
-  '621498': { code: '8832', desc: 'Physician — Package', package: true },
-  // Home health care
-  '621610': { code: '8835', desc: 'Home Health Care Services', adminCode: '8810' },
-  // Golf / country clubs → 9060 (package)
-  '713910': { code: '9060', desc: 'Club — Country, Golf, Yacht', package: true },
-  // Fitness / recreation → 9063
-  '713940': { code: '9063', desc: 'Health or Exercise Institute' },
-  '713990': { code: '9063', desc: 'Health or Exercise Institute' },
-  // Restaurants / food service → 9079
-  '722511': { code: '9079', desc: 'Restaurant / Fast Food' },
-  '722513': { code: '9079', desc: 'Restaurant / Fast Food' },
-  '722515': { code: '9079', desc: 'Restaurant / Fast Food' },
-  // Law offices → 8820 (package)
-  '541110': { code: '8820', desc: 'Attorney — Package', package: true },
-  '541191': { code: '8820', desc: 'Attorney — Package', package: true },
-  '541199': { code: '8820', desc: 'Attorney — Package', package: true },
-  // Schools / childcare → 8868
-  '611110': { code: '8868', desc: 'School: Professional Employees', supportCode: '9101' },
-  '611310': { code: '8868', desc: 'School: Professional Employees', supportCode: '9101' },
-  '611610': { code: '8868', desc: 'School: Professional Employees', supportCode: '9101' },
-  '624410': { code: '8868', desc: 'School: Professional Employees', supportCode: '9101' },
-  // Sports / recreation instruction → 9063
-  '611620': { code: '9063', desc: 'Health or Exercise Institute' },
-  // Tutoring → 8810
-  '611691': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  // Software & IT → 8810
-  '511210': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541511': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541512': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541519': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  // Professional services → 8810
-  '541213': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541219': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541613': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541614': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '541810': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  '524210': { code: '8810', desc: 'Clerical Office Employees NOC' },
-  // Construction → 5645
-  '236220': { code: '5645', desc: 'Carpentry', physical: true },
-  '236115': { code: '5645', desc: 'Carpentry', physical: true },
-  '236116': { code: '5645', desc: 'Carpentry', physical: true },
-  '236118': { code: '5645', desc: 'Carpentry', physical: true },
-  // Retail → 8017
-  '441110': { code: '8017', desc: 'Retail Store NOC' },
-  '441120': { code: '8017', desc: 'Retail Store NOC' },
-  '442110': { code: '8017', desc: 'Retail Store NOC' },
-  '444110': { code: '8017', desc: 'Retail Store NOC' },
-  '445110': { code: '8017', desc: 'Retail Store NOC' },
-  '445230': { code: '8017', desc: 'Retail Store NOC' },
-  '452210': { code: '8017', desc: 'Retail Store NOC' },
-  // Auto repair → 8380
-  '811111': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811112': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811118': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811121': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811122': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811191': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
-  '811198': { code: '8380', desc: 'Auto Service or Repair Center', physical: true },
+// v5 Package NAICS — ALL employees get the same code, no title overrides
+const PACKAGE_NAICS_CODES = {
+  '621111': { code: '8832', desc: 'Physician — All Employees' },
+  '621112': { code: '8832', desc: 'Physician — All Employees' },
+  '621210': { code: '8832', desc: 'Physician — All Employees' },
+  '621310': { code: '8832', desc: 'Physician — All Employees' },
+  '621320': { code: '8832', desc: 'Physician — All Employees' },
+  '621330': { code: '8832', desc: 'Physician — All Employees' },
+  '621340': { code: '8832', desc: 'Physician — All Employees' },
+  '621391': { code: '8832', desc: 'Physician — All Employees' },
+  '621399': { code: '8832', desc: 'Physician — All Employees' },
+  '621420': { code: '8832', desc: 'Physician — All Employees' },
+  '621491': { code: '8832', desc: 'Physician — All Employees' },
+  '621493': { code: '8832', desc: 'Physician — All Employees' },
+  '621498': { code: '8832', desc: 'Physician — All Employees' },
+  '541110': { code: '8820', desc: 'Attorney — All Employees' },
+  '541191': { code: '8820', desc: 'Attorney — All Employees' },
+  '541199': { code: '8820', desc: 'Attorney — All Employees' },
+  '713910': { code: '9060', desc: 'Club — Country, Golf, Fishing or Yacht' },
 };
 
-// Step 2: Title override keywords (checked unless package code applies)
-const TITLE_OVERRIDES = [
-  { keywords: ['clerical', 'admin', 'receptionist', 'bookkeeper', 'data entry', 'office manager'], code: '8810', desc: 'Clerical Office Employees NOC' },
-  { keywords: ['driver', 'delivery'], code: '7380', desc: 'Drivers NOC' },
-  { keywords: ['outside sales', 'traveling sales', 'field sales'], code: '8742', desc: 'Salespersons — Outside' },
-  { keywords: ['janitor', 'custodian', 'cleaner', 'janitorial'], code: '9014', desc: 'Janitorial Services' },
-  { keywords: ['warehouse', 'shipping', 'receiving'], code: '8018', desc: 'Wholesale Store NOC' },
+// v5 NAICS that always require manual review (conflicting/insufficient data)
+const REVIEW_NAICS = new Set(['541360', '624190', '624229']);
+
+// School NAICS — teachers/professionals → 8868, support staff → 9101
+const SCHOOL_NAICS = new Set(['611110', '611310', '611610', '624410']);
+const SCHOOL_SUPPORT_KEYWORDS = ['custodian', 'janitor', 'maintenance', 'cafeteria', 'bus driver', 'groundskeeper'];
+
+// Physical-risk NAICS detection by range
+function isPhysicalRisk(naics) {
+  const n = parseInt(naics, 10);
+  if (isNaN(n)) return false;
+  return (
+    (n >= 111000 && n <= 212999) ||
+    (n >= 221000 && n <= 221999) ||
+    (n >= 236000 && n <= 238999) ||
+    (n >= 311000 && n <= 339999) ||
+    (n >= 484000 && n <= 485999) ||
+    (n >= 493000 && n <= 493999) ||
+    (n >= 562000 && n <= 562999) ||
+    naics === '811111' || naics === '811112' || naics === '811113'
+  );
+}
+
+// v5 strong title overrides — applied on all non-package NAICS
+const STRONG_TITLE_OVERRIDES = [
+  { keywords: ['outside sales', 'field sales', 'territory manager', 'territory rep', 'field representative', 'regional sales rep'], code: '8742', desc: 'Salespersons — Outside' },
+  { keywords: ['delivery driver', 'cdl driver', 'chauffeur', 'courier', 'logistics driver', 'shuttle driver', 'truck driver'], code: '7380', desc: 'Drivers NOC' },
+  { keywords: ['it field tech', 'copier tech', 'av tech'], code: '5191', desc: 'Office Machine Install / Repair' },
+  { keywords: ['low-voltage', 'structured cabling', 'network field installer'], code: '7600', desc: 'Cable / Computer Installation' },
 ];
 
-// Step 3: Title-only fallbacks (when NAICS missing or unrecognized)
+// Titles that clearly pass clerical separation at physical-risk NAICS → 8810
+const CLERICAL_SEPARATION_KEYWORDS = [
+  'bookkeeper', 'admin assistant', 'administrative assistant', 'receptionist',
+  'hr manager', 'human resources', 'dispatcher', 'office administrator',
+  'inside sales',
+];
+
+// Ambiguous titles at physical-risk NAICS → REVIEW
+const PHYSICAL_RISK_REVIEW_KEYWORDS = [
+  'owner', 'operator', 'working owner', 'supervisor', 'foreman',
+  'site supervisor', 'crew lead', 'project manager', 'estimator',
+  'quality control', 'inspector', 'welder', 'fabricator', 'machinist',
+  'assembler', 'superintendent',
+];
+
+// v5 title-only fallbacks (no NAICS present)
 const TITLE_FALLBACKS = [
-  { keywords: ['nurse', 'medical assistant', 'dental', 'dentist', 'physician', 'doctor', 'therapist'], code: '8832', desc: 'Physician — Package' },
-  { keywords: ['teacher', 'instructor', 'tutor', 'professor'], code: '8868', desc: 'School: Professional Employees' },
-  { keywords: ['engineer', 'developer', 'programmer', 'designer', 'analyst', 'consultant', 'accountant'], code: '8810', desc: 'Clerical Office Employees NOC' },
-  { keywords: ['cook', 'chef', 'server', 'bartender', 'barista', 'dishwasher', 'host', 'hostess', 'busser'], code: '9079', desc: 'Restaurant / Fast Food' },
-  { keywords: ['mechanic', 'auto technician', 'body shop'], code: '8380', desc: 'Auto Service or Repair Center' },
-  { keywords: ['carpenter', 'framer', 'roofer', 'plumber', 'electrician', 'construction'], code: '5645', desc: 'Carpentry' },
-  { keywords: ['retail', 'cashier', 'store clerk', 'sales associate'], code: '8017', desc: 'Retail Store NOC' },
-  { keywords: ['manager', 'director', 'supervisor', 'coordinator', 'assistant manager'], code: '8810', desc: 'Clerical Office Employees NOC' },
+  { keywords: ['nurse', 'medical assistant', 'dental assistant', 'physician', 'doctor', 'therapist', 'rbt', 'bcba', 'nurse practitioner'], code: '8832', desc: 'Physician — All Employees' },
+  { keywords: ['caregiver', 'home health aide', 'home care aide'], code: '8835', desc: 'Home Health Care Services' },
+  { keywords: ['teacher', 'lead teacher', 'assistant teacher', 'substitute teacher'], code: '8868', desc: 'School: Professional Employees' },
+  { keywords: ['personal trainer', 'pilates instructor', 'yoga instructor', 'fitness instructor'], code: '9063', desc: 'Health or Exercise Institute' },
+  { keywords: ['stylist', 'hair stylist', 'barber', 'esthetician', 'nail tech', 'lash artist'], code: '9586', desc: 'Beauty Parlor / Salon' },
+  { keywords: ['architect', 'civil engineer', 'structural engineer', 'surveyor', 'drafter'], code: '8601', desc: 'Architectural / Engineering Firm' },
+  { keywords: ['auto mechanic', 'auto technician', 'service writer', 'car salesman'], code: '8391', desc: 'Auto Sales / Service' },
+  { keywords: ['landscaper', 'groundskeeper', 'lawn care'], code: '42', desc: 'Landscape Gardening' },
+  { keywords: ['janitor', 'custodian', 'cleaning tech'], code: '9014', desc: 'Buildings by Contractor' },
+  { keywords: ['server', 'bartender', 'line cook', 'prep cook', 'barista', 'dishwasher', 'busser'], code: '9079', desc: 'Restaurant / Fast Food' },
+  { keywords: ['paralegal', 'legal assistant', 'associate attorney', 'attorney'], code: '8820', desc: 'Attorney — All Employees' },
+  { keywords: ['software engineer', 'developer', 'programmer', 'full stack', 'data analyst', 'data scientist', 'product manager', 'ux designer', 'accountant', 'bookkeeper', 'controller', 'recruiter', 'hr manager', 'marketing manager'], code: '8810', desc: 'Clerical Office Employees NOC' },
 ];
 
-// Admin-type titles for clerical separation (Step 4)
-const ADMIN_TITLES = ['office', 'admin', 'clerical', 'receptionist', 'bookkeeper', 'secretary', 'data entry', 'office manager', 'hr ', 'human resource', 'accounting', 'payroll'];
+// Standalone ambiguous titles with no NAICS → REVIEW
+const AMBIGUOUS_TITLES_STANDALONE = ['owner', 'president', 'general manager', 'operator'];
 
+// Fallback NAICS map used when CSV fails to load (covers most common codes)
+const FALLBACK_NAICS_MAP = {
+  '621111': { code: '8832', desc: 'Physician — All Employees' }, '621112': { code: '8832', desc: 'Physician — All Employees' },
+  '621210': { code: '8832', desc: 'Physician — All Employees' }, '621310': { code: '8832', desc: 'Physician — All Employees' },
+  '621320': { code: '8832', desc: 'Physician — All Employees' }, '621330': { code: '8832', desc: 'Physician — All Employees' },
+  '621340': { code: '8832', desc: 'Physician — All Employees' }, '621391': { code: '8832', desc: 'Physician — All Employees' },
+  '621399': { code: '8832', desc: 'Physician — All Employees' }, '621420': { code: '8832', desc: 'Physician — All Employees' },
+  '621491': { code: '8832', desc: 'Physician — All Employees' }, '621493': { code: '8832', desc: 'Physician — All Employees' },
+  '621498': { code: '8832', desc: 'Physician — All Employees' },
+  '621610': { code: '8835', desc: 'Home Health Care Services' },
+  '541110': { code: '8820', desc: 'Attorney — All Employees' }, '541191': { code: '8820', desc: 'Attorney — All Employees' },
+  '541199': { code: '8820', desc: 'Attorney — All Employees' },
+  '713910': { code: '9060', desc: 'Club — Country, Golf, Fishing or Yacht' },
+  '713940': { code: '9063', desc: 'Health or Exercise Institute' }, '713990': { code: '9063', desc: 'Health or Exercise Institute' },
+  '611620': { code: '9063', desc: 'Health or Exercise Institute' },
+  '722511': { code: '9079', desc: 'Restaurant / Fast Food' }, '722513': { code: '9079', desc: 'Restaurant / Fast Food' },
+  '722515': { code: '9079', desc: 'Restaurant / Fast Food' },
+  '611110': { code: '8868', desc: 'School: Professional Employees' }, '611310': { code: '8868', desc: 'School: Professional Employees' },
+  '611610': { code: '8868', desc: 'School: Professional Employees' }, '624410': { code: '8868', desc: 'School: Professional Employees' },
+  '611691': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '511210': { code: '8810', desc: 'Clerical Office Employees NOC' }, '541511': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '541512': { code: '8810', desc: 'Clerical Office Employees NOC' }, '541519': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '541213': { code: '8810', desc: 'Clerical Office Employees NOC' }, '541219': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '541613': { code: '8810', desc: 'Clerical Office Employees NOC' }, '541614': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '541810': { code: '8810', desc: 'Clerical Office Employees NOC' }, '524210': { code: '8810', desc: 'Clerical Office Employees NOC' },
+  '441110': { code: '8391', desc: 'Auto Sales / Service' }, '441310': { code: '8391', desc: 'Auto Sales / Service' },
+  '441120': { code: '8748', desc: 'Boat / RV / Used Vehicle Dealer' }, '441210': { code: '8748', desc: 'Boat / RV / Used Vehicle Dealer' },
+  '811111': { code: '8391', desc: 'Auto Sales / Service' }, '811112': { code: '8391', desc: 'Auto Sales / Service' },
+  '811113': { code: '8391', desc: 'Auto Sales / Service' },
+  '442110': { code: '8017', desc: 'Store Retail NOC' }, '444110': { code: '8017', desc: 'Store Retail NOC' },
+  '445110': { code: '8017', desc: 'Store Retail NOC' }, '445230': { code: '8017', desc: 'Store Retail NOC' },
+  '452210': { code: '8017', desc: 'Store Retail NOC' },
+  '236115': { code: '5645', desc: 'Carpentry' }, '236116': { code: '5645', desc: 'Carpentry' },
+  '236118': { code: '5645', desc: 'Carpentry' }, '236220': { code: '5645', desc: 'Carpentry' },
+  '812111': { code: '9586', desc: 'Beauty Parlor / Salon' }, '812112': { code: '9586', desc: 'Beauty Parlor / Salon' },
+  '812113': { code: '9586', desc: 'Beauty Parlor / Salon' },
+  '812910': { code: '8831', desc: 'Dog Kennels / Pet Grooming' },
+  '484110': { code: '7219', desc: 'Trucking NOC' }, '484121': { code: '7219', desc: 'Trucking NOC' },
+  '484122': { code: '7219', desc: 'Trucking NOC' }, '484220': { code: '7219', desc: 'Trucking NOC' },
+  '484230': { code: '7219', desc: 'Trucking NOC' },
+  '484210': { code: '8293', desc: 'Storage Warehouse — Furniture' },
+  '493110': { code: '8292', desc: 'Warehousing NOC' }, '493120': { code: '8292', desc: 'Warehousing NOC' },
+  '561710': { code: '9014', desc: 'Buildings by Contractor' }, '561720': { code: '9014', desc: 'Buildings by Contractor' },
+  '561730': { code: '42', desc: 'Landscape Gardening' },
+  '722320': { code: '9082', desc: 'Caterer — Full Service' },
+  '721110': { code: '9052', desc: 'Hotel' }, '721191': { code: '9052', desc: 'Hotel' }, '721199': { code: '9052', desc: 'Hotel' },
+  '721120': { code: '9044', desc: 'Casino Gambling Hotel' },
+  '541310': { code: '8601', desc: 'Architectural / Engineering Firm' },
+  '541330': { code: '8601', desc: 'Architectural / Engineering Firm' },
+  '541370': { code: '8601', desc: 'Architectural / Engineering Firm' },
+  '541320': { code: '42', desc: 'Landscape Gardening' },
+  '623110': { code: '8826', desc: 'Rest Home' }, '623210': { code: '8826', desc: 'Rest Home' },
+  '623311': { code: '8826', desc: 'Rest Home' }, '623312': { code: '8826', desc: 'Rest Home' },
+  '624120': { code: '8826', desc: 'Rest Home' },
+};
+
+// ---- CSV Loading ----
+async function loadNaicsCsv() {
+  const btn = document.getElementById('predictBtn');
+  btn.disabled = true;
+  btn.textContent = 'Loading…';
+
+  try {
+    const resp = await fetch('./naics_to_class_codes_wide.csv');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    const text = await resp.text();
+    const lines = text.trim().split('\n');
+    for (let i = 1; i < lines.length; i++) {
+      const cols = lines[i].split(',');
+      if (cols.length >= 3 && cols[0]) {
+        naicsMap.set(cols[0].trim(), { code: cols[1].trim(), desc: cols[2].trim() });
+      }
+    }
+    csvLoadMode = 'csv';
+  } catch (e) {
+    console.warn('CSV load failed, using built-in fallback:', e);
+    for (const [naics, entry] of Object.entries(FALLBACK_NAICS_MAP)) {
+      naicsMap.set(naics, entry);
+    }
+    csvLoadMode = 'fallback';
+    const info = document.getElementById('dataInfo');
+    if (info) info.innerHTML = '<span class="warn">⚠ Offline — using built-in NAICS lookup (876-row table unavailable)</span>';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Predict Class Codes →';
+}
+
+// ---- Classification (v5) ----
 function classifyEmployee(emp) {
   const title = (emp.title || '').toLowerCase().trim();
   const naics = (emp.naics || '').trim();
 
-  // Step 1: NAICS-first lookup
-  const naicsMatch = NAICS_MAP[naics];
-
-  if (naicsMatch) {
-    // Package codes — ALL employees get this code
-    if (naicsMatch.package) {
-      return { code: naicsMatch.code, desc: naicsMatch.desc, reasoning: `NAICS ${naics} is a package code — all employees classified as ${naicsMatch.code}.` };
+  if (naics) {
+    // Always-REVIEW NAICS
+    if (REVIEW_NAICS.has(naics)) {
+      return { code: 'REVIEW', desc: 'Industry too ambiguous to classify', reasoning: `NAICS ${naics} has conflicting historical data — requires manual review.` };
     }
 
-    // Step 2: Title overrides (non-package NAICS)
-    for (const override of TITLE_OVERRIDES) {
-      if (override.keywords.some(kw => title.includes(kw))) {
-        return { code: override.code, desc: override.desc, reasoning: `Title "${emp.title}" matches override keyword → ${override.code}, overriding NAICS ${naics}.` };
+    // Package codes — no title overrides
+    if (PACKAGE_NAICS_CODES[naics]) {
+      const pkg = PACKAGE_NAICS_CODES[naics];
+      return { code: pkg.code, desc: pkg.desc, reasoning: `NAICS ${naics} is a package code — all employees classified as ${pkg.code}.` };
+    }
+
+    // Strong title overrides
+    for (const ov of STRONG_TITLE_OVERRIDES) {
+      if (ov.keywords.some(kw => title.includes(kw))) {
+        return { code: ov.code, desc: ov.desc, reasoning: `Title "${emp.title}" matches strong override → ${ov.code}.` };
       }
     }
 
-    // Step 4: Clerical separation for physical-risk NAICS
-    if (naicsMatch.physical) {
-      if (ADMIN_TITLES.some(kw => title.includes(kw))) {
-        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Admin/office role at physical-risk NAICS ${naics} → clerical separation to 8810.` };
+    // School NAICS — split professionals vs support staff
+    if (SCHOOL_NAICS.has(naics)) {
+      if (SCHOOL_SUPPORT_KEYWORDS.some(kw => title.includes(kw))) {
+        return { code: '9101', desc: 'School: Support Employees', reasoning: `Support staff at school NAICS ${naics} → 9101.` };
+      }
+      return { code: '8868', desc: 'School: Professional Employees', reasoning: `Education NAICS ${naics} → 8868.` };
+    }
+
+    // Home health care — split caregivers vs admin
+    if (naics === '621610') {
+      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw))) {
+        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Admin role at home health NAICS 621610 → 8810.` };
+      }
+      return { code: '8835', desc: 'Home Health Care Services', reasoning: `NAICS 621610 caregiver role → 8835.` };
+    }
+
+    // Physical-risk NAICS — clerical separation test
+    if (isPhysicalRisk(naics)) {
+      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw))) {
+        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Clerical title at physical-risk NAICS ${naics} → 8810 (clerical separation).` };
+      }
+      if (PHYSICAL_RISK_REVIEW_KEYWORDS.some(kw => title.includes(kw))) {
+        return { code: 'REVIEW', desc: 'Ambiguous role at physical-risk business', reasoning: `"${emp.title}" at physical-risk NAICS ${naics} — could be field or office. Needs review.` };
       }
     }
 
-    // Home health care admin separation
-    if (naicsMatch.adminCode) {
-      if (ADMIN_TITLES.some(kw => title.includes(kw))) {
-        return { code: naicsMatch.adminCode, desc: 'Clerical Office Employees NOC', reasoning: `Admin role at NAICS ${naics} → separated to ${naicsMatch.adminCode}.` };
-      }
+    // CSV lookup
+    const entry = naicsMap.get(naics);
+    if (entry) {
+      return { code: entry.code, desc: entry.desc, reasoning: `NAICS ${naics} → ${entry.code} (historical top match).` };
     }
 
-    // School support staff separation
-    if (naicsMatch.supportCode) {
-      const supportKeywords = ['custodian', 'janitor', 'maintenance', 'cafeteria', 'bus driver', 'groundskeeper'];
-      if (supportKeywords.some(kw => title.includes(kw))) {
-        return { code: naicsMatch.supportCode, desc: 'School: Support Staff', reasoning: `Support staff role at education NAICS ${naics} → ${naicsMatch.supportCode}.` };
-      }
-    }
-
-    // Default to NAICS mapping
-    return { code: naicsMatch.code, desc: naicsMatch.desc, reasoning: `NAICS ${naics} maps to ${naicsMatch.code} — ${naicsMatch.desc}.` };
+    // Not in lookup
+    return { code: 'REVIEW', desc: 'NAICS not in lookup table', reasoning: `NAICS ${naics} not found in lookup. Verify manually.` };
   }
 
-  // No NAICS match — Step 2: Check title overrides first
-  for (const override of TITLE_OVERRIDES) {
-    if (override.keywords.some(kw => title.includes(kw))) {
-      return { code: override.code, desc: override.desc, reasoning: `No NAICS match. Title "${emp.title}" matches override → ${override.code}.` };
+  // No NAICS — title-based only
+  for (const ov of STRONG_TITLE_OVERRIDES) {
+    if (ov.keywords.some(kw => title.includes(kw))) {
+      return { code: ov.code, desc: ov.desc, reasoning: `No NAICS. Title "${emp.title}" → ${ov.code} via title override.` };
     }
   }
 
-  // Step 3: Title-only fallbacks
-  for (const fallback of TITLE_FALLBACKS) {
-    if (fallback.keywords.some(kw => title.includes(kw))) {
-      return { code: fallback.code, desc: fallback.desc, reasoning: `No NAICS match. Title "${emp.title}" matches fallback → ${fallback.code}.` };
+  for (const fb of TITLE_FALLBACKS) {
+    if (fb.keywords.some(kw => title.includes(kw))) {
+      return { code: fb.code, desc: fb.desc, reasoning: `No NAICS. Title "${emp.title}" → ${fb.code} via title fallback.` };
     }
   }
 
-  // Default: Clerical
-  return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `No NAICS or title match found. Defaulting to 8810 Clerical.` };
+  if (AMBIGUOUS_TITLES_STANDALONE.some(kw => title === kw || title.startsWith(kw + ' ') || title.endsWith(' ' + kw))) {
+    return { code: 'REVIEW', desc: 'Ambiguous title without NAICS', reasoning: `"${emp.title}" is ambiguous without a NAICS code — multiple class codes possible.` };
+  }
+
+  return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `No NAICS or title match. Defaulting to 8810 Clerical.` };
 }
 
 // ---- Predict Class Codes ----
@@ -941,17 +1055,15 @@ function predictClassCodes() {
 function renderPredictions() {
   const container = document.getElementById('predictionResults');
 
-  aggregated = [];
+  reviewItems = [];
   const codeMap = {};
   predictions.forEach(p => {
+    if (p.class_code === 'REVIEW') {
+      reviewItems.push(p);
+      return;
+    }
     if (!codeMap[p.class_code]) {
-      codeMap[p.class_code] = {
-        code: p.class_code,
-        description: p.class_description,
-        payroll: 0,
-        employees: 0,
-        titles: []
-      };
+      codeMap[p.class_code] = { code: p.class_code, description: p.class_description, payroll: 0, employees: 0, titles: [] };
     }
     codeMap[p.class_code].payroll += p.payroll || 0;
     codeMap[p.class_code].employees += 1;
@@ -960,31 +1072,32 @@ function renderPredictions() {
   aggregated = Object.values(codeMap).sort((a, b) => b.payroll - a.payroll);
 
   const governing = aggregated[0];
+  const reviewCount = reviewItems.length;
+  const classifiedCount = predictions.length - reviewCount;
 
-  container.innerHTML = `
-    <div class="alert alert-success">
-      ✓ ${predictions.length} employees classified into ${aggregated.length} class code(s).
-      Governing class: <strong>${governing.code} — ${governing.description}</strong>
-    </div>
+  let alertHtml = '';
+  if (governing) {
+    alertHtml += `<div class="alert alert-success">✓ ${classifiedCount} employee${classifiedCount !== 1 ? 's' : ''} classified into ${aggregated.length} class code(s). Governing class: <strong>${governing.code} — ${governing.description}</strong></div>`;
+  }
+  if (reviewCount > 0) {
+    alertHtml += `<div class="alert alert-warning">⚠ ${reviewCount} employee${reviewCount !== 1 ? 's' : ''} need${reviewCount === 1 ? 's' : ''} manual review — see highlighted rows below.</div>`;
+  }
+
+  container.innerHTML = alertHtml + `
     <table class="results-table">
       <thead>
         <tr>
-          <th>#</th>
-          <th>Employee Title</th>
-          <th>NAICS</th>
-          <th>Class Code</th>
-          <th>Description</th>
-          <th>Payroll</th>
-          <th>Reasoning</th>
+          <th>#</th><th>Employee Title</th><th>NAICS</th><th>Class Code</th>
+          <th>Description</th><th>Payroll</th><th>Reasoning</th>
         </tr>
       </thead>
       <tbody>
         ${predictions.map((p, i) => `
-          <tr>
+          <tr${p.class_code === 'REVIEW' ? ' style="background:var(--warning-bg)"' : ''}>
             <td>${i + 1}</td>
             <td>${p.title}</td>
             <td>${p.naics || '—'}</td>
-            <td><span class="class-code-badge">${p.class_code}</span></td>
+            <td><span class="${p.class_code === 'REVIEW' ? 'review-badge' : 'class-code-badge'}">${p.class_code === 'REVIEW' ? '⚠ Review' : p.class_code}</span></td>
             <td>${p.class_description}</td>
             <td>${p.payroll ? '$' + p.payroll.toLocaleString() : '—'}</td>
             <td style="font-size:12px;color:var(--text-tertiary)">${p.reasoning}</td>
@@ -997,33 +1110,27 @@ function renderPredictions() {
 
 // ---- Generate Template ----
 function generateTemplate() {
+  if (aggregated.length === 0) {
+    alert('All employees need manual review — resolve class codes before generating a template.');
+    return;
+  }
+
   const governing = aggregated[0];
   const totalPayroll = aggregated.reduce((s, a) => s + a.payroll, 0);
   const totalEEs = predictions.length;
+  const reviewCount = reviewItems.length;
 
   const summary = document.getElementById('templateSummary');
   summary.innerHTML = `
     <div class="summary-grid">
-      <div class="summary-card">
-        <div class="value">${totalEEs}</div>
-        <div class="label">Employees</div>
-      </div>
-      <div class="summary-card">
-        <div class="value">${aggregated.length}</div>
-        <div class="label">Class Codes</div>
-      </div>
-      <div class="summary-card">
-        <div class="value">$${totalPayroll.toLocaleString()}</div>
-        <div class="label">Total Payroll</div>
-      </div>
-      <div class="summary-card">
-        <div class="value">${governing.code}</div>
-        <div class="label">Governing Code</div>
-      </div>
+      <div class="summary-card"><div class="value">${totalEEs}</div><div class="label">Employees</div></div>
+      <div class="summary-card"><div class="value">${aggregated.length}</div><div class="label">Class Codes</div></div>
+      <div class="summary-card"><div class="value">$${totalPayroll.toLocaleString()}</div><div class="label">Total Payroll</div></div>
+      <div class="summary-card"><div class="value">${governing.code}</div><div class="label">Governing Code</div></div>
     </div>
+    ${reviewCount > 0 ? `<div class="alert alert-warning" style="margin-bottom:0">⚠ ${reviewCount} employee${reviewCount !== 1 ? 's' : ''} not included in totals — class code needs manual review.</div>` : ''}
   `;
 
-  const preview = document.getElementById('templatePreview');
   const fields = [
     ['Effective Date', document.getElementById('effectiveDate').value],
     ['Client Name', document.getElementById('clientName').value],
@@ -1038,6 +1145,7 @@ function generateTemplate() {
     ['Losses', document.getElementById('losses').value || 'See attached'],
   ];
 
+  const preview = document.getElementById('templatePreview');
   preview.innerHTML = `
     <div class="card-title" style="margin-top:0">Template Preview</div>
     <div class="template-preview">
@@ -1051,13 +1159,7 @@ function generateTemplate() {
     <div class="card-title" style="margin-top:24px">Class Code Detail</div>
     <table class="results-table">
       <thead>
-        <tr>
-          <th>State</th>
-          <th>Class Code</th>
-          <th>Description</th>
-          <th>Payroll</th>
-          <th>FT EE's</th>
-        </tr>
+        <tr><th>State</th><th>Class Code</th><th>Description</th><th>Payroll</th><th>FT EE's</th></tr>
       </thead>
       <tbody>
         ${aggregated.map(a => `
@@ -1069,10 +1171,8 @@ function generateTemplate() {
             <td>${a.employees}</td>
           </tr>
         `).join('')}
-        <tr style="font-weight:700; background:var(--bg-warm)">
-          <td colspan="3">Total</td>
-          <td>$${totalPayroll.toLocaleString()}</td>
-          <td>${totalEEs}</td>
+        <tr style="font-weight:700;background:var(--bg-warm)">
+          <td colspan="3">Total</td><td>$${totalPayroll.toLocaleString()}</td><td>${totalEEs}</td>
         </tr>
       </tbody>
     </table>
@@ -1100,7 +1200,7 @@ function downloadXlsx() {
     ['Operations:', document.getElementById('operations').value],
     ['Website:', document.getElementById('website').value],
     ['E-mod:', document.getElementById('emod').value],
-    ['Governing Class code:', `${governing.code} — ${governing.description}`],
+    ['Governing Class code:', governing ? `${governing.code} — ${governing.description}` : 'REVIEW'],
     [],
     ['State', 'Class Code', 'Manual Rate', 'Payroll', 'Manual Prem', "FT - EE's", 'Net Rate'],
   ];
@@ -1111,30 +1211,36 @@ function downloadXlsx() {
 
   data.push(['BWOS 2%', '', '', totalPayroll, '', totalEEs, '']);
 
+  if (reviewItems.length > 0) {
+    data.push([]);
+    data.push([`** NEEDS REVIEW — ${reviewItems.length} employee${reviewItems.length !== 1 ? 's' : ''} require manual class code assignment **`]);
+    data.push(['Employee Title', 'NAICS', 'Payroll', 'Reason']);
+    reviewItems.forEach(r => {
+      data.push([r.title, r.naics || '—', r.payroll || 0, r.reasoning]);
+    });
+  }
+
   const ws = XLSX.utils.aoa_to_sheet(data);
-
   ws['!cols'] = [
-    { wch: 22 },
-    { wch: 35 },
-    { wch: 14 },
-    { wch: 14 },
-    { wch: 14 },
-    { wch: 12 },
-    { wch: 12 },
+    { wch: 22 }, { wch: 35 }, { wch: 14 }, { wch: 14 },
+    { wch: 14 }, { wch: 12 }, { wch: 12 },
   ];
-
   XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
   const infoWs = XLSX.utils.aoa_to_sheet([
     ['Generated by WC Prequote Template Generator'],
     [`Date: ${new Date().toLocaleDateString()}`],
     [`Client: ${clientName}`],
+    [`Classification: v5 (${csvLoadMode === 'csv' ? '876-NAICS lookup' : 'built-in fallback'})`],
   ]);
   XLSX.utils.book_append_sheet(wb, infoWs, 'Info Sheet');
 
   const filename = `UW_Template_${clientName.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.xlsx`;
   XLSX.writeFile(wb, filename);
 }
+
+// Kick off CSV load immediately on page load
+loadNaicsCsv();
 </script>
 </body>
 </html>
