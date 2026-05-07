@@ -9,7 +9,6 @@
 <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
 <style>
   :root {
-    /* Gusto Brand - Kale & Guava */
     --kale: #0A8080;
     --kale-80: #3B9999;
     --kale-60: #6CB3B3;
@@ -20,7 +19,6 @@
     --guava-60: #F89E91;
     --guava-40: #FBBEB6;
     --guava-20: #FDDFDA;
-    /* Gusto Typography & Backgrounds */
     --text-primary: #222525;
     --text-secondary: #4E5151;
     --text-tertiary: #7A7C7C;
@@ -30,7 +28,6 @@
     --bg-white: #FFFFFF;
     --border: #D3D3D3;
     --border-light: #E8E5E3;
-    /* Semantic */
     --success: #007a4b;
     --success-bg: #f8fdf7;
     --error: #c53336;
@@ -50,7 +47,6 @@
     line-height: 1.6;
   }
 
-  /* Header */
   .header {
     background: var(--bg-white);
     border-bottom: 1px solid var(--border);
@@ -68,17 +64,8 @@
     letter-spacing: -0.5px;
   }
 
-  .header-divider {
-    width: 1px;
-    height: 24px;
-    background: var(--border);
-  }
-
-  .header-title {
-    font-size: 15px;
-    color: var(--text-secondary);
-    font-weight: 600;
-  }
+  .header-divider { width: 1px; height: 24px; background: var(--border); }
+  .header-title { font-size: 15px; color: var(--text-secondary); font-weight: 600; }
 
   .header-badge {
     background: var(--guava-20);
@@ -89,12 +76,7 @@
     border-radius: 12px;
   }
 
-  /* Layout */
-  .container {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 32px 24px;
-  }
+  .container { max-width: 1100px; margin: 0 auto; padding: 32px 24px; }
 
   h1 {
     font-family: 'Song Myung', serif;
@@ -104,18 +86,9 @@
     color: var(--text-primary);
   }
 
-  .subtitle {
-    color: var(--text-secondary);
-    font-size: 15px;
-    margin-bottom: 28px;
-  }
+  .subtitle { color: var(--text-secondary); font-size: 15px; margin-bottom: 28px; }
 
-  /* Stepper */
-  .stepper {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 28px;
-  }
+  .stepper { display: flex; gap: 8px; margin-bottom: 28px; }
 
   .step-indicator {
     display: flex;
@@ -132,48 +105,20 @@
     transition: all 0.15s ease;
   }
 
-  .step-indicator:hover {
-    background: var(--bg-peach);
-    border-color: var(--guava-40);
-  }
-
-  .step-indicator.active {
-    background: var(--kale-20);
-    border-color: var(--kale);
-    color: var(--kale);
-  }
-
-  .step-indicator.completed {
-    background: var(--kale);
-    color: white;
-    border-color: var(--kale);
-  }
+  .step-indicator:hover { background: var(--bg-peach); border-color: var(--guava-40); }
+  .step-indicator.active { background: var(--kale-20); border-color: var(--kale); color: var(--kale); }
+  .step-indicator.completed { background: var(--kale); color: white; border-color: var(--kale); }
 
   .step-num {
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 12px;
-    font-weight: 700;
-    background: var(--border);
-    color: var(--text-tertiary);
-    flex-shrink: 0;
+    width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+    background: var(--border); color: var(--text-tertiary); flex-shrink: 0;
   }
 
-  .step-indicator.active .step-num {
-    background: var(--kale);
-    color: white;
-  }
+  .step-indicator.active .step-num { background: var(--kale); color: white; }
+  .step-indicator.completed .step-num { background: rgba(255,255,255,0.3); color: white; }
 
-  .step-indicator.completed .step-num {
-    background: rgba(255,255,255,0.3);
-    color: white;
-  }
-
-  /* Cards */
   .card {
     background: var(--bg-white);
     border: 1px solid var(--border);
@@ -183,39 +128,14 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.04);
   }
 
-  .card-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    color: var(--text-primary);
-  }
-
+  .card-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; color: var(--text-primary); }
   .card.hidden { display: none; }
 
-  /* Form */
-  .form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group.full-width { grid-column: 1 / -1; }
 
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .form-group.full-width {
-    grid-column: 1 / -1;
-  }
-
-  label {
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-  }
+  label { font-size: 13px; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
 
   input, textarea, select {
     padding: 10px 12px;
@@ -234,287 +154,113 @@
     box-shadow: 0 0 0 3px rgba(10, 128, 128, 0.12);
   }
 
-  input::placeholder, textarea::placeholder {
-    color: var(--text-disabled);
-  }
+  input::placeholder, textarea::placeholder { color: var(--text-disabled); }
+  textarea { resize: vertical; min-height: 80px; }
 
-  textarea {
-    resize: vertical;
-    min-height: 80px;
-  }
-
-  /* Employee data */
   .data-area textarea {
-    width: 100%;
-    min-height: 200px;
+    width: 100%; min-height: 200px;
     font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
-    font-size: 13px;
-    line-height: 1.5;
-    white-space: pre;
-    overflow-x: auto;
+    font-size: 13px; line-height: 1.5; white-space: pre; overflow-x: auto;
   }
 
-  .data-controls {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 12px;
-    align-items: center;
-    flex-wrap: wrap;
-  }
+  .data-controls { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; flex-wrap: wrap; }
 
-  .data-info {
-    font-size: 13px;
-    color: var(--text-secondary);
-    margin-left: 4px;
-  }
+  .data-info { font-size: 13px; color: var(--text-secondary); margin-left: 4px; }
+  .data-info .count { font-weight: 700; color: var(--kale); }
+  .data-info .check { color: var(--success); }
+  .data-info .warn { color: var(--warning); }
 
-  .data-info .count {
-    font-weight: 700;
-    color: var(--kale);
-  }
-
-  .data-info .check {
-    color: var(--success);
-  }
-
-  .data-info .warn {
-    color: var(--warning);
-  }
-
-  /* Buttons */
   .btn {
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid var(--text-primary);
-    background: var(--bg-white);
-    color: var(--text-primary);
-    transition: all 0.15s ease;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    padding: 10px 20px; border-radius: 8px; font-size: 14px; font-weight: 600;
+    cursor: pointer; border: 1px solid var(--text-primary);
+    background: var(--bg-white); color: var(--text-primary);
+    transition: all 0.15s ease; display: inline-flex; align-items: center; gap: 8px;
   }
 
-  .btn:hover {
-    background: var(--bg-warm);
-  }
+  .btn:hover { background: var(--bg-warm); }
+  .btn-primary { background: var(--kale); color: white; border-color: var(--kale); }
+  .btn-primary:hover { background: #005c5c; border-color: #005c5c; }
+  .btn-primary:disabled { background: var(--kale-40); border-color: var(--kale-40); cursor: not-allowed; }
+  .btn-large { padding: 14px 28px; font-size: 16px; border-radius: 10px; }
+  .btn-secondary { border-color: var(--border); color: var(--text-secondary); }
+  .btn-secondary:hover { border-color: var(--text-secondary); color: var(--text-primary); }
 
-  .btn-primary {
-    background: var(--kale);
-    color: white;
-    border-color: var(--kale);
-  }
+  .nav-buttons { display: flex; justify-content: space-between; margin-top: 24px; }
 
-  .btn-primary:hover {
-    background: #005c5c;
-    border-color: #005c5c;
-  }
-
-  .btn-primary:disabled {
-    background: var(--kale-40);
-    border-color: var(--kale-40);
-    cursor: not-allowed;
-  }
-
-  .btn-large {
-    padding: 14px 28px;
-    font-size: 16px;
-    border-radius: 10px;
-  }
-
-  .btn-secondary {
-    border-color: var(--border);
-    color: var(--text-secondary);
-  }
-
-  .btn-secondary:hover {
-    border-color: var(--text-secondary);
-    color: var(--text-primary);
-  }
-
-  /* Nav */
-  .nav-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 24px;
-  }
-
-  /* Results table */
-  .results-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 14px;
-    margin-top: 16px;
-  }
+  .results-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 16px; }
 
   .results-table th {
-    background: var(--bg-warm);
-    padding: 10px 12px;
-    text-align: left;
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--text-tertiary);
-    border-bottom: 2px solid var(--border);
+    background: var(--bg-warm); padding: 10px 12px; text-align: left;
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
+    color: var(--text-tertiary); border-bottom: 2px solid var(--border);
   }
 
-  .results-table td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border-light);
-    color: var(--text-primary);
-  }
-
-  .results-table tr:hover td {
-    background: var(--bg-peach);
-  }
+  .results-table td { padding: 10px 12px; border-bottom: 1px solid var(--border-light); color: var(--text-primary); }
+  .results-table tr:hover td { background: var(--bg-peach); }
 
   .class-code-badge {
-    background: var(--kale-20);
-    color: var(--kale);
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 13px;
+    background: var(--kale-20); color: var(--kale); font-weight: 700;
+    padding: 2px 8px; border-radius: 4px; font-size: 13px;
     font-family: 'SF Mono', 'Fira Code', monospace;
   }
 
-  /* Template preview */
-  .template-preview {
-    background: var(--bg-warm);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 16px;
-  }
-
-  .preview-row {
-    display: flex;
-    padding: 8px 0;
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .preview-row:last-child {
-    border-bottom: none;
-  }
-
-  .preview-label {
-    font-weight: 600;
-    width: 200px;
-    flex-shrink: 0;
-    color: var(--text-tertiary);
-    font-size: 13px;
-  }
-
-  .preview-value {
-    font-size: 14px;
-    color: var(--text-primary);
-  }
-
-  /* Summary cards */
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-    margin-bottom: 24px;
-  }
-
-  .summary-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-    text-align: center;
-  }
-
-  .summary-card .value {
-    font-family: 'Song Myung', serif;
-    font-size: 26px;
-    font-weight: 400;
-    color: var(--kale);
-  }
-
-  .summary-card .label {
-    font-size: 12px;
-    color: var(--text-tertiary);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 4px;
-    font-weight: 600;
-  }
-
-  /* Alerts */
-  .alert {
-    padding: 12px 16px;
-    border-radius: 8px;
-    font-size: 14px;
-    margin-bottom: 16px;
-  }
-
-  .alert-success {
-    background: var(--kale-20);
-    color: var(--kale);
-    border: 1px solid var(--kale-40);
-  }
-
-  .alert-error {
-    background: var(--guava-20);
-    color: var(--guava);
-    border: 1px solid var(--guava-40);
-  }
-
-  .alert-info {
-    background: var(--bg-peach);
-    color: var(--text-secondary);
-    border: 1px solid var(--guava-40);
-  }
-
-  /* Review badge */
   .review-badge {
-    background: #fff8e6;
-    color: var(--warning);
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 13px;
+    background: #fff8e6; color: var(--warning); font-weight: 700;
+    padding: 2px 8px; border-radius: 4px; font-size: 13px;
     font-family: 'SF Mono', 'Fira Code', monospace;
   }
 
-  .alert-warning {
-    background: #fff8e6;
-    color: var(--warning);
-    border: 1px solid #f0d060;
-  }
-
-  /* Spinner */
-  .spinner {
+  /* Clickable alternative code badges — click to swap with primary prediction */
+  .alt-badge {
+    background: var(--bg-warm);
+    color: var(--text-tertiary);
+    border: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 1px 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-family: 'SF Mono', 'Fira Code', monospace;
+    margin-left: 4px;
     display: inline-block;
-    width: 18px;
-    height: 18px;
-    border: 2px solid rgba(255,255,255,0.3);
-    border-top-color: white;
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
+    transition: all 0.1s ease;
+    vertical-align: middle;
+  }
+  .alt-badge:hover {
+    border-color: var(--kale);
+    color: var(--kale);
+    background: var(--kale-20);
   }
 
+  .template-preview { background: var(--bg-warm); border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-top: 16px; }
+
+  .preview-row { display: flex; padding: 8px 0; border-bottom: 1px solid var(--border-light); }
+  .preview-row:last-child { border-bottom: none; }
+  .preview-label { font-weight: 600; width: 200px; flex-shrink: 0; color: var(--text-tertiary); font-size: 13px; }
+  .preview-value { font-size: 14px; color: var(--text-primary); }
+
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+
+  .summary-card { background: var(--bg-white); border: 1px solid var(--border); border-radius: 8px; padding: 16px; text-align: center; }
+  .summary-card .value { font-family: 'Song Myung', serif; font-size: 26px; font-weight: 400; color: var(--kale); }
+  .summary-card .label { font-size: 12px; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; font-weight: 600; }
+
+  .alert { padding: 12px 16px; border-radius: 8px; font-size: 14px; margin-bottom: 16px; }
+  .alert-success { background: var(--kale-20); color: var(--kale); border: 1px solid var(--kale-40); }
+  .alert-error { background: var(--guava-20); color: var(--guava); border: 1px solid var(--guava-40); }
+  .alert-info { background: var(--bg-peach); color: var(--text-secondary); border: 1px solid var(--guava-40); }
+  .alert-warning { background: #fff8e6; color: var(--warning); border: 1px solid #f0d060; }
+
+  .spinner {
+    display: inline-block; width: 18px; height: 18px;
+    border: 2px solid rgba(255,255,255,0.3); border-top-color: white;
+    border-radius: 50%; animation: spin 0.7s linear infinite;
+  }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* File upload */
-  .file-upload-wrapper {
-    position: relative;
-    display: inline-block;
-  }
+  .file-upload-wrapper { position: relative; display: inline-block; }
+  .file-upload-wrapper input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
 
-  .file-upload-wrapper input[type="file"] {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    cursor: pointer;
-  }
-
-  /* Responsive */
   @media (max-width: 768px) {
     .form-grid { grid-template-columns: 1fr; }
     .summary-grid { grid-template-columns: repeat(2, 1fr); }
@@ -537,20 +283,11 @@
   <h1>Generate WC prequote templates</h1>
   <p class="subtitle">Enter company info from Panda, paste employee data, and download a completed UW template for the carrier.</p>
 
-  <!-- Stepper -->
   <div class="stepper">
-    <div class="step-indicator active" onclick="goToStep(1)" id="step1-ind">
-      <span class="step-num">1</span> Company Info
-    </div>
-    <div class="step-indicator" onclick="goToStep(2)" id="step2-ind">
-      <span class="step-num">2</span> Employee Data
-    </div>
-    <div class="step-indicator" onclick="goToStep(3)" id="step3-ind">
-      <span class="step-num">3</span> Predict Class Codes
-    </div>
-    <div class="step-indicator" onclick="goToStep(4)" id="step4-ind">
-      <span class="step-num">4</span> Review &amp; Download
-    </div>
+    <div class="step-indicator active" onclick="goToStep(1)" id="step1-ind"><span class="step-num">1</span> Company Info</div>
+    <div class="step-indicator" onclick="goToStep(2)" id="step2-ind"><span class="step-num">2</span> Employee Data</div>
+    <div class="step-indicator" onclick="goToStep(3)" id="step3-ind"><span class="step-num">3</span> Predict Class Codes</div>
+    <div class="step-indicator" onclick="goToStep(4)" id="step4-ind"><span class="step-num">4</span> Review &amp; Download</div>
   </div>
 
   <!-- Step 1: Company Info -->
@@ -691,14 +428,12 @@ Assistant Manager\t722511\t42000`;
 function handleFileUpload(event) {
   const file = event.target.files[0];
   if (!file) return;
-
   if (file.name.endsWith('.xlsx') || file.name.endsWith('.xls')) {
     const reader = new FileReader();
     reader.onload = function(e) {
       const wb = XLSX.read(e.target.result, { type: 'array' });
       const ws = wb.Sheets[wb.SheetNames[0]];
-      const csv = XLSX.utils.sheet_to_csv(ws, { FS: '\t' });
-      document.getElementById('employeeData').value = csv;
+      document.getElementById('employeeData').value = XLSX.utils.sheet_to_csv(ws, { FS: '\t' });
       updateDataInfo();
     };
     reader.readAsArrayBuffer(file);
@@ -716,32 +451,28 @@ function handleFileUpload(event) {
 function parseEmployeeData() {
   const raw = document.getElementById('employeeData').value.trim();
   if (!raw) return [];
-
   const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
   if (lines.length < 2) return [];
-
   const candidates = ['\t', ';', ','];
   const sample = (lines[0] + '\n' + (lines[1] || ''));
   const sep = candidates.find(d => sample.includes(d)) || ',';
   const headers = lines[0].split(sep).map(h => h.trim().toUpperCase().replace(/['"]/g, ''));
-
-  const titleIdx = headers.findIndex(h => h.includes('EMPLOYEE_TITLE') || h === 'TITLE' || h === 'JOB_TITLE');
-  const naicsIdx = headers.findIndex(h => h.includes('NAICS'));
-  const payrollIdx = headers.findIndex(h => h.includes('PAYROLL') || h.includes('SALARY') || h.includes('WAGE'));
-  const nameIdx = headers.findIndex(h => h.includes('EMPLOYEE_NAME') || h === 'NAME');
-  const bizIdx = headers.findIndex(h => h.includes('BUSINESS') || h.includes('COMPANY'));
+  const titleIdx    = headers.findIndex(h => h.includes('EMPLOYEE_TITLE') || h === 'TITLE' || h === 'JOB_TITLE');
+  const naicsIdx    = headers.findIndex(h => h.includes('NAICS'));
+  const payrollIdx  = headers.findIndex(h => h.includes('PAYROLL') || h.includes('SALARY') || h.includes('WAGE'));
+  const nameIdx     = headers.findIndex(h => h.includes('EMPLOYEE_NAME') || h === 'NAME');
+  const bizIdx      = headers.findIndex(h => h.includes('BUSINESS') || h.includes('COMPANY'));
   const industryIdx = headers.findIndex(h => h.includes('INDUSTRY'));
-
   const employees = [];
   for (let i = 1; i < lines.length; i++) {
     const cols = lines[i].split(sep).map(c => c.trim().replace(/['"]/g, ''));
     if (cols.length < 2) continue;
     employees.push({
-      title: titleIdx >= 0 ? cols[titleIdx] : '',
-      naics: naicsIdx >= 0 ? cols[naicsIdx] : '',
-      payroll: payrollIdx >= 0 ? parseFloat(cols[payrollIdx].replace(/[$,]/g, '')) || 0 : 0,
-      name: nameIdx >= 0 ? cols[nameIdx] : '',
-      business: bizIdx >= 0 ? cols[bizIdx] : '',
+      title:    titleIdx    >= 0 ? cols[titleIdx]    : '',
+      naics:    naicsIdx    >= 0 ? cols[naicsIdx]    : '',
+      payroll:  payrollIdx  >= 0 ? parseFloat(cols[payrollIdx].replace(/[$,]/g, '')) || 0 : 0,
+      name:     nameIdx     >= 0 ? cols[nameIdx]     : '',
+      business: bizIdx      >= 0 ? cols[bizIdx]      : '',
       industry: industryIdx >= 0 ? cols[industryIdx] : '',
     });
   }
@@ -753,9 +484,9 @@ function updateDataInfo() {
   const info = document.getElementById('dataInfo');
   if (emps.length > 0) {
     const hasPayroll = emps.some(e => e.payroll > 0);
-    const hasNaics = emps.some(e => e.naics);
+    const hasNaics   = emps.some(e => e.naics);
     info.innerHTML = `<span class="count">${emps.length}</span> employees detected` +
-      (hasNaics ? ' <span class="check">✓ NAICS codes</span>' : '') +
+      (hasNaics   ? ' <span class="check">✓ NAICS codes</span>'  : '') +
       (hasPayroll ? ' <span class="check">✓ Payroll data</span>' : ' <span class="warn">⚠ No payroll column</span>');
   } else {
     info.textContent = '';
@@ -765,14 +496,13 @@ function updateDataInfo() {
 document.getElementById('employeeData').addEventListener('input', updateDataInfo);
 
 // ==== CLIENT-SIDE CLASSIFICATION ENGINE (v5) ====
-// Driven by naics_to_class_codes_wide.csv (876 NAICS, loaded at startup).
-// Rules source: tx_wc_rules_v5.md from class-code-predictor skill.
+// Driven by naics_to_class_codes_wide.csv (876 NAICS entries, loaded at startup).
+// CSV columns: naics, top1_code, top1_desc, top2_code, top2_desc, top3_code, top3_desc, candidate_count
 
-// NAICS lookup populated from CSV at load time
 const naicsMap = new Map();
 let csvLoadMode = 'loading'; // 'csv' | 'fallback'
 
-// v5 Package NAICS — ALL employees get the same code, no title overrides
+// Package NAICS — ALL employees get the same code regardless of title
 const PACKAGE_NAICS_CODES = {
   '621111': { code: '8832', desc: 'Physician — All Employees' },
   '621112': { code: '8832', desc: 'Physician — All Employees' },
@@ -793,14 +523,11 @@ const PACKAGE_NAICS_CODES = {
   '713910': { code: '9060', desc: 'Club — Country, Golf, Fishing or Yacht' },
 };
 
-// v5 NAICS that always require manual review (conflicting/insufficient data)
 const REVIEW_NAICS = new Set(['541360', '624190', '624229']);
 
-// School NAICS — teachers/professionals → 8868, support staff → 9101
 const SCHOOL_NAICS = new Set(['611110', '611310', '611610', '624410']);
 const SCHOOL_SUPPORT_KEYWORDS = ['custodian', 'janitor', 'maintenance', 'cafeteria', 'bus driver', 'groundskeeper'];
 
-// Physical-risk NAICS detection by range
 function isPhysicalRisk(naics) {
   const n = parseInt(naics, 10);
   if (isNaN(n)) return false;
@@ -816,7 +543,6 @@ function isPhysicalRisk(naics) {
   );
 }
 
-// v5 strong title overrides — applied on all non-package NAICS
 const STRONG_TITLE_OVERRIDES = [
   { keywords: ['outside sales', 'field sales', 'territory manager', 'territory rep', 'field representative', 'regional sales rep'], code: '8742', desc: 'Salespersons — Outside' },
   { keywords: ['delivery driver', 'cdl driver', 'chauffeur', 'courier', 'logistics driver', 'shuttle driver', 'truck driver'], code: '7380', desc: 'Drivers NOC' },
@@ -824,14 +550,11 @@ const STRONG_TITLE_OVERRIDES = [
   { keywords: ['low-voltage', 'structured cabling', 'network field installer'], code: '7600', desc: 'Cable / Computer Installation' },
 ];
 
-// Titles that clearly pass clerical separation at physical-risk NAICS → 8810
 const CLERICAL_SEPARATION_KEYWORDS = [
   'bookkeeper', 'admin assistant', 'administrative assistant', 'receptionist',
-  'hr manager', 'human resources', 'dispatcher', 'office administrator',
-  'inside sales',
+  'hr manager', 'human resources', 'dispatcher', 'office administrator', 'inside sales',
 ];
 
-// Ambiguous titles at physical-risk NAICS → REVIEW
 const PHYSICAL_RISK_REVIEW_KEYWORDS = [
   'owner', 'operator', 'working owner', 'supervisor', 'foreman',
   'site supervisor', 'crew lead', 'project manager', 'estimator',
@@ -839,7 +562,6 @@ const PHYSICAL_RISK_REVIEW_KEYWORDS = [
   'assembler', 'superintendent',
 ];
 
-// v5 title-only fallbacks (no NAICS present)
 const TITLE_FALLBACKS = [
   { keywords: ['nurse', 'medical assistant', 'dental assistant', 'physician', 'doctor', 'therapist', 'rbt', 'bcba', 'nurse practitioner'], code: '8832', desc: 'Physician — All Employees' },
   { keywords: ['caregiver', 'home health aide', 'home care aide'], code: '8835', desc: 'Home Health Care Services' },
@@ -855,10 +577,9 @@ const TITLE_FALLBACKS = [
   { keywords: ['software engineer', 'developer', 'programmer', 'full stack', 'data analyst', 'data scientist', 'product manager', 'ux designer', 'accountant', 'bookkeeper', 'controller', 'recruiter', 'hr manager', 'marketing manager'], code: '8810', desc: 'Clerical Office Employees NOC' },
 ];
 
-// Standalone ambiguous titles with no NAICS → REVIEW
 const AMBIGUOUS_TITLES_STANDALONE = ['owner', 'president', 'general manager', 'operator'];
 
-// Fallback NAICS map used when CSV fails to load (covers most common codes)
+// Built-in fallback when CSV is unavailable
 const FALLBACK_NAICS_MAP = {
   '621111': { code: '8832', desc: 'Physician — All Employees' }, '621112': { code: '8832', desc: 'Physician — All Employees' },
   '621210': { code: '8832', desc: 'Physician — All Employees' }, '621310': { code: '8832', desc: 'Physician — All Employees' },
@@ -901,20 +622,21 @@ const FALLBACK_NAICS_MAP = {
   '484210': { code: '8293', desc: 'Storage Warehouse — Furniture' },
   '493110': { code: '8292', desc: 'Warehousing NOC' }, '493120': { code: '8292', desc: 'Warehousing NOC' },
   '561710': { code: '9014', desc: 'Buildings by Contractor' }, '561720': { code: '9014', desc: 'Buildings by Contractor' },
-  '561730': { code: '42', desc: 'Landscape Gardening' },
+  '561730': { code: '42',   desc: 'Landscape Gardening' },
   '722320': { code: '9082', desc: 'Caterer — Full Service' },
   '721110': { code: '9052', desc: 'Hotel' }, '721191': { code: '9052', desc: 'Hotel' }, '721199': { code: '9052', desc: 'Hotel' },
   '721120': { code: '9044', desc: 'Casino Gambling Hotel' },
   '541310': { code: '8601', desc: 'Architectural / Engineering Firm' },
   '541330': { code: '8601', desc: 'Architectural / Engineering Firm' },
   '541370': { code: '8601', desc: 'Architectural / Engineering Firm' },
-  '541320': { code: '42', desc: 'Landscape Gardening' },
+  '541320': { code: '42',   desc: 'Landscape Gardening' },
   '623110': { code: '8826', desc: 'Rest Home' }, '623210': { code: '8826', desc: 'Rest Home' },
   '623311': { code: '8826', desc: 'Rest Home' }, '623312': { code: '8826', desc: 'Rest Home' },
   '624120': { code: '8826', desc: 'Rest Home' },
 };
 
 // ---- CSV Loading ----
+// Reads all 8 columns: naics, top1_code, top1_desc, top2_code, top2_desc, top3_code, top3_desc, candidate_count
 async function loadNaicsCsv() {
   const btn = document.getElementById('predictBtn');
   btn.disabled = true;
@@ -928,14 +650,22 @@ async function loadNaicsCsv() {
     for (let i = 1; i < lines.length; i++) {
       const cols = lines[i].split(',');
       if (cols.length >= 3 && cols[0]) {
-        naicsMap.set(cols[0].trim(), { code: cols[1].trim(), desc: cols[2].trim() });
+        naicsMap.set(cols[0].trim(), {
+          code:           cols[1].trim(),
+          desc:           cols[2].trim(),
+          code2:          (cols[3] || '').trim(),
+          desc2:          (cols[4] || '').trim(),
+          code3:          (cols[5] || '').trim(),
+          desc3:          (cols[6] || '').trim(),
+          candidateCount: parseInt(cols[7]) || 1,
+        });
       }
     }
     csvLoadMode = 'csv';
   } catch (e) {
     console.warn('CSV load failed, using built-in fallback:', e);
     for (const [naics, entry] of Object.entries(FALLBACK_NAICS_MAP)) {
-      naicsMap.set(naics, entry);
+      naicsMap.set(naics, { ...entry, code2: '', desc2: '', code3: '', desc3: '', candidateCount: 1 });
     }
     csvLoadMode = 'fallback';
     const info = document.getElementById('dataInfo');
@@ -947,104 +677,99 @@ async function loadNaicsCsv() {
 }
 
 // ---- Classification (v5) ----
+// Every return path includes: code, desc, reasoning, alternatives[], candidateCount
 function classifyEmployee(emp) {
   const title = (emp.title || '').toLowerCase().trim();
-  const naics = (emp.naics || '').trim();
+  const naics  = (emp.naics  || '').trim();
+  const REVIEW = (desc, reasoning) => ({ code: 'REVIEW', desc, reasoning, alternatives: [], candidateCount: 0 });
 
   if (naics) {
-    // Always-REVIEW NAICS
-    if (REVIEW_NAICS.has(naics)) {
-      return { code: 'REVIEW', desc: 'Industry too ambiguous to classify', reasoning: `NAICS ${naics} has conflicting historical data — requires manual review.` };
-    }
+    if (REVIEW_NAICS.has(naics))
+      return REVIEW('Industry too ambiguous to classify', `NAICS ${naics} has conflicting historical data — requires manual review.`);
 
-    // Package codes — no title overrides
     if (PACKAGE_NAICS_CODES[naics]) {
       const pkg = PACKAGE_NAICS_CODES[naics];
-      return { code: pkg.code, desc: pkg.desc, reasoning: `NAICS ${naics} is a package code — all employees classified as ${pkg.code}.` };
+      return { code: pkg.code, desc: pkg.desc, reasoning: `NAICS ${naics} is a package code — all employees classified as ${pkg.code}.`, alternatives: [], candidateCount: 1 };
     }
 
-    // Strong title overrides
     for (const ov of STRONG_TITLE_OVERRIDES) {
-      if (ov.keywords.some(kw => title.includes(kw))) {
-        return { code: ov.code, desc: ov.desc, reasoning: `Title "${emp.title}" matches strong override → ${ov.code}.` };
-      }
+      if (ov.keywords.some(kw => title.includes(kw)))
+        return { code: ov.code, desc: ov.desc, reasoning: `Title "${emp.title}" matches strong override → ${ov.code}.`, alternatives: [], candidateCount: 1 };
     }
 
-    // School NAICS — split professionals vs support staff
     if (SCHOOL_NAICS.has(naics)) {
-      if (SCHOOL_SUPPORT_KEYWORDS.some(kw => title.includes(kw))) {
-        return { code: '9101', desc: 'School: Support Employees', reasoning: `Support staff at school NAICS ${naics} → 9101.` };
-      }
-      return { code: '8868', desc: 'School: Professional Employees', reasoning: `Education NAICS ${naics} → 8868.` };
+      if (SCHOOL_SUPPORT_KEYWORDS.some(kw => title.includes(kw)))
+        return { code: '9101', desc: 'School: Support Employees', reasoning: `Support staff at school NAICS ${naics} → 9101.`, alternatives: [], candidateCount: 1 };
+      return { code: '8868', desc: 'School: Professional Employees', reasoning: `Education NAICS ${naics} → 8868.`, alternatives: [], candidateCount: 1 };
     }
 
-    // Home health care — split caregivers vs admin
     if (naics === '621610') {
-      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw))) {
-        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Admin role at home health NAICS 621610 → 8810.` };
-      }
-      return { code: '8835', desc: 'Home Health Care Services', reasoning: `NAICS 621610 caregiver role → 8835.` };
+      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw)))
+        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Admin role at home health NAICS 621610 → 8810.`, alternatives: [], candidateCount: 1 };
+      return { code: '8835', desc: 'Home Health Care Services', reasoning: `NAICS 621610 caregiver role → 8835.`, alternatives: [], candidateCount: 1 };
     }
 
-    // Physical-risk NAICS — clerical separation test
     if (isPhysicalRisk(naics)) {
-      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw))) {
-        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Clerical title at physical-risk NAICS ${naics} → 8810 (clerical separation).` };
-      }
-      if (PHYSICAL_RISK_REVIEW_KEYWORDS.some(kw => title.includes(kw))) {
-        return { code: 'REVIEW', desc: 'Ambiguous role at physical-risk business', reasoning: `"${emp.title}" at physical-risk NAICS ${naics} — could be field or office. Needs review.` };
-      }
+      if (CLERICAL_SEPARATION_KEYWORDS.some(kw => title.includes(kw)))
+        return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `Clerical title at physical-risk NAICS ${naics} → 8810 (clerical separation).`, alternatives: [], candidateCount: 1 };
+      if (PHYSICAL_RISK_REVIEW_KEYWORDS.some(kw => title.includes(kw)))
+        return REVIEW('Ambiguous role at physical-risk business', `"${emp.title}" at physical-risk NAICS ${naics} — could be field or office. Needs review.`);
     }
 
-    // CSV lookup
+    // CSV lookup — top1 is the prediction; top2/top3 become clickable alternatives
     const entry = naicsMap.get(naics);
     if (entry) {
-      return { code: entry.code, desc: entry.desc, reasoning: `NAICS ${naics} → ${entry.code} (historical top match).` };
+      const alternatives = [
+        entry.code2 ? { code: entry.code2, desc: entry.desc2 } : null,
+        entry.code3 ? { code: entry.code3, desc: entry.desc3 } : null,
+      ].filter(a => a && a.code && a.code !== entry.code);
+      return {
+        code: entry.code,
+        desc: entry.desc,
+        reasoning: `NAICS ${naics} → ${entry.code} (${entry.candidateCount} historical candidate${entry.candidateCount !== 1 ? 's' : ''}).`,
+        alternatives,
+        candidateCount: entry.candidateCount,
+      };
     }
 
-    // Not in lookup
-    return { code: 'REVIEW', desc: 'NAICS not in lookup table', reasoning: `NAICS ${naics} not found in lookup. Verify manually.` };
+    return REVIEW('NAICS not in lookup table', `NAICS ${naics} not found in lookup. Verify manually.`);
   }
 
-  // No NAICS — title-based only
+  // No NAICS — title-based fallbacks
   for (const ov of STRONG_TITLE_OVERRIDES) {
-    if (ov.keywords.some(kw => title.includes(kw))) {
-      return { code: ov.code, desc: ov.desc, reasoning: `No NAICS. Title "${emp.title}" → ${ov.code} via title override.` };
-    }
+    if (ov.keywords.some(kw => title.includes(kw)))
+      return { code: ov.code, desc: ov.desc, reasoning: `No NAICS. Title "${emp.title}" → ${ov.code} via strong override.`, alternatives: [], candidateCount: 1 };
   }
 
   for (const fb of TITLE_FALLBACKS) {
-    if (fb.keywords.some(kw => title.includes(kw))) {
-      return { code: fb.code, desc: fb.desc, reasoning: `No NAICS. Title "${emp.title}" → ${fb.code} via title fallback.` };
-    }
+    if (fb.keywords.some(kw => title.includes(kw)))
+      return { code: fb.code, desc: fb.desc, reasoning: `No NAICS. Title "${emp.title}" → ${fb.code} via title fallback.`, alternatives: [], candidateCount: 1 };
   }
 
-  if (AMBIGUOUS_TITLES_STANDALONE.some(kw => title === kw || title.startsWith(kw + ' ') || title.endsWith(' ' + kw))) {
-    return { code: 'REVIEW', desc: 'Ambiguous title without NAICS', reasoning: `"${emp.title}" is ambiguous without a NAICS code — multiple class codes possible.` };
-  }
+  if (AMBIGUOUS_TITLES_STANDALONE.some(kw => title === kw || title.startsWith(kw + ' ') || title.endsWith(' ' + kw)))
+    return REVIEW('Ambiguous title without NAICS', `"${emp.title}" is ambiguous without a NAICS code — multiple class codes possible.`);
 
-  return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `No NAICS or title match. Defaulting to 8810 Clerical.` };
+  return { code: '8810', desc: 'Clerical Office Employees NOC', reasoning: `No NAICS or title match. Defaulting to 8810 Clerical.`, alternatives: [], candidateCount: 1 };
 }
 
 // ---- Predict Class Codes ----
 function predictClassCodes() {
   parsedEmployees = parseEmployeeData();
-  if (parsedEmployees.length === 0) {
-    alert('Please enter employee data first');
-    return;
-  }
+  if (parsedEmployees.length === 0) { alert('Please enter employee data first'); return; }
 
   predictions = parsedEmployees.map((emp, i) => {
     const result = classifyEmployee(emp);
     return {
-      index: i + 1,
-      title: emp.title,
-      naics: emp.naics,
-      payroll: emp.payroll,
-      name: emp.name,
-      class_code: result.code,
+      index:             i + 1,
+      title:             emp.title,
+      naics:             emp.naics,
+      payroll:           emp.payroll,
+      name:              emp.name,
+      class_code:        result.code,
       class_description: result.desc,
-      reasoning: result.reasoning,
+      reasoning:         result.reasoning,
+      alternatives:      result.alternatives || [],
+      candidateCount:    result.candidateCount || 1,
     };
   });
 
@@ -1052,60 +777,81 @@ function predictClassCodes() {
   goToStep(3);
 }
 
+// ---- Switch to an alternative code (user clicks an alt badge) ----
+function switchCode(idx, code, desc) {
+  const p = predictions[idx];
+  const prev = { code: p.class_code, desc: p.class_description };
+  p.class_code        = code;
+  p.class_description = desc;
+  // Rotate: remove new code from alts, push previous code back in
+  p.alternatives = (p.alternatives || []).filter(a => a.code !== code);
+  if (prev.code !== 'REVIEW' && !p.alternatives.some(a => a.code === prev.code)) {
+    p.alternatives.unshift({ code: prev.code, desc: prev.desc });
+  }
+  renderPredictions();
+}
+
+// ---- Render Predictions ----
 function renderPredictions() {
   const container = document.getElementById('predictionResults');
 
   reviewItems = [];
   const codeMap = {};
   predictions.forEach(p => {
-    if (p.class_code === 'REVIEW') {
-      reviewItems.push(p);
-      return;
-    }
+    if (p.class_code === 'REVIEW') { reviewItems.push(p); return; }
     if (!codeMap[p.class_code]) {
       codeMap[p.class_code] = { code: p.class_code, description: p.class_description, payroll: 0, employees: 0, titles: [] };
     }
-    codeMap[p.class_code].payroll += p.payroll || 0;
+    codeMap[p.class_code].payroll   += p.payroll || 0;
     codeMap[p.class_code].employees += 1;
     codeMap[p.class_code].titles.push(p.title);
   });
   aggregated = Object.values(codeMap).sort((a, b) => b.payroll - a.payroll);
 
-  const governing = aggregated[0];
-  const reviewCount = reviewItems.length;
+  const governing       = aggregated[0];
+  const reviewCount     = reviewItems.length;
   const classifiedCount = predictions.length - reviewCount;
 
   let alertHtml = '';
-  if (governing) {
+  if (governing)
     alertHtml += `<div class="alert alert-success">✓ ${classifiedCount} employee${classifiedCount !== 1 ? 's' : ''} classified into ${aggregated.length} class code(s). Governing class: <strong>${governing.code} — ${governing.description}</strong></div>`;
-  }
-  if (reviewCount > 0) {
+  if (reviewCount > 0)
     alertHtml += `<div class="alert alert-warning">⚠ ${reviewCount} employee${reviewCount !== 1 ? 's' : ''} need${reviewCount === 1 ? 's' : ''} manual review — see highlighted rows below.</div>`;
-  }
+
+  const rows = predictions.map((p, i) => {
+    const altBadges = (p.alternatives || []).map(a => {
+      const safeCode = a.code.replace(/'/g, "\\'");
+      const safeDesc = a.desc.replace(/'/g, "\\'");
+      return `<span class="alt-badge" onclick="switchCode(${i},'${safeCode}','${safeDesc}')" title="Switch to: ${a.desc}">${a.code}</span>`;
+    }).join('');
+
+    const mainBadge = p.class_code === 'REVIEW'
+      ? `<span class="review-badge">⚠ Review</span>`
+      : `<span class="class-code-badge">${p.class_code}</span>`;
+
+    return `
+      <tr${p.class_code === 'REVIEW' ? ' style="background:var(--warning-bg)"' : ''}>
+        <td>${i + 1}</td>
+        <td>${p.title}</td>
+        <td>${p.naics || '—'}</td>
+        <td style="white-space:nowrap">${mainBadge}${altBadges}</td>
+        <td>${p.class_description}</td>
+        <td>${p.payroll ? '$' + p.payroll.toLocaleString() : '—'}</td>
+        <td style="font-size:12px;color:var(--text-tertiary)">${p.reasoning}</td>
+      </tr>`;
+  }).join('');
 
   container.innerHTML = alertHtml + `
     <table class="results-table">
       <thead>
         <tr>
-          <th>#</th><th>Employee Title</th><th>NAICS</th><th>Class Code</th>
-          <th>Description</th><th>Payroll</th><th>Reasoning</th>
+          <th>#</th><th>Employee Title</th><th>NAICS</th>
+          <th>Class Code</th><th>Description</th>
+          <th>Payroll</th><th>Reasoning</th>
         </tr>
       </thead>
-      <tbody>
-        ${predictions.map((p, i) => `
-          <tr${p.class_code === 'REVIEW' ? ' style="background:var(--warning-bg)"' : ''}>
-            <td>${i + 1}</td>
-            <td>${p.title}</td>
-            <td>${p.naics || '—'}</td>
-            <td><span class="${p.class_code === 'REVIEW' ? 'review-badge' : 'class-code-badge'}">${p.class_code === 'REVIEW' ? '⚠ Review' : p.class_code}</span></td>
-            <td>${p.class_description}</td>
-            <td>${p.payroll ? '$' + p.payroll.toLocaleString() : '—'}</td>
-            <td style="font-size:12px;color:var(--text-tertiary)">${p.reasoning}</td>
-          </tr>
-        `).join('')}
-      </tbody>
-    </table>
-  `;
+      <tbody>${rows}</tbody>
+    </table>`;
 }
 
 // ---- Generate Template ----
@@ -1114,14 +860,12 @@ function generateTemplate() {
     alert('All employees need manual review — resolve class codes before generating a template.');
     return;
   }
-
-  const governing = aggregated[0];
+  const governing    = aggregated[0];
   const totalPayroll = aggregated.reduce((s, a) => s + a.payroll, 0);
-  const totalEEs = predictions.length;
-  const reviewCount = reviewItems.length;
+  const totalEEs     = predictions.length;
+  const reviewCount  = reviewItems.length;
 
-  const summary = document.getElementById('templateSummary');
-  summary.innerHTML = `
+  document.getElementById('templateSummary').innerHTML = `
     <div class="summary-grid">
       <div class="summary-card"><div class="value">${totalEEs}</div><div class="label">Employees</div></div>
       <div class="summary-card"><div class="value">${aggregated.length}</div><div class="label">Class Codes</div></div>
@@ -1133,34 +877,30 @@ function generateTemplate() {
 
   const fields = [
     ['Effective Date', document.getElementById('effectiveDate').value],
-    ['Client Name', document.getElementById('clientName').value],
-    ['Address', document.getElementById('address').value],
-    ['FEIN', document.getElementById('fein').value],
-    ['Years in Biz', document.getElementById('yearsInBiz').value],
-    ['Operations', document.getElementById('operations').value],
-    ['Website', document.getElementById('website').value],
-    ['E-mod', document.getElementById('emod').value],
-    ["EE's", totalEEs.toString()],
+    ['Client Name',    document.getElementById('clientName').value],
+    ['Address',        document.getElementById('address').value],
+    ['FEIN',           document.getElementById('fein').value],
+    ['Years in Biz',   document.getElementById('yearsInBiz').value],
+    ['Operations',     document.getElementById('operations').value],
+    ['Website',        document.getElementById('website').value],
+    ['E-mod',          document.getElementById('emod').value],
+    ["EE's",           totalEEs.toString()],
     ['Governing Class Code', `${governing.code} — ${governing.description}`],
-    ['Losses', document.getElementById('losses').value || 'See attached'],
+    ['Losses',         document.getElementById('losses').value || 'See attached'],
   ];
 
-  const preview = document.getElementById('templatePreview');
-  preview.innerHTML = `
+  document.getElementById('templatePreview').innerHTML = `
     <div class="card-title" style="margin-top:0">Template Preview</div>
     <div class="template-preview">
       ${fields.map(([label, val]) => `
         <div class="preview-row">
           <div class="preview-label">${label}:</div>
           <div class="preview-value">${val || '<em style="color:var(--text-disabled)">Not provided</em>'}</div>
-        </div>
-      `).join('')}
+        </div>`).join('')}
     </div>
     <div class="card-title" style="margin-top:24px">Class Code Detail</div>
     <table class="results-table">
-      <thead>
-        <tr><th>State</th><th>Class Code</th><th>Description</th><th>Payroll</th><th>FT EE's</th></tr>
-      </thead>
+      <thead><tr><th>State</th><th>Class Code</th><th>Description</th><th>Payroll</th><th>FT EE's</th></tr></thead>
       <tbody>
         ${aggregated.map(a => `
           <tr>
@@ -1169,62 +909,52 @@ function generateTemplate() {
             <td>${a.description}</td>
             <td>$${a.payroll.toLocaleString()}</td>
             <td>${a.employees}</td>
-          </tr>
-        `).join('')}
+          </tr>`).join('')}
         <tr style="font-weight:700;background:var(--bg-warm)">
           <td colspan="3">Total</td><td>$${totalPayroll.toLocaleString()}</td><td>${totalEEs}</td>
         </tr>
       </tbody>
-    </table>
-  `;
+    </table>`;
 
   goToStep(4);
 }
 
 // ---- Download XLSX ----
 function downloadXlsx() {
-  const wb = XLSX.utils.book_new();
-  const governing = aggregated[0];
+  const wb           = XLSX.utils.book_new();
+  const governing    = aggregated[0];
   const totalPayroll = aggregated.reduce((s, a) => s + a.payroll, 0);
-  const totalEEs = predictions.length;
-  const clientName = document.getElementById('clientName').value || 'Company';
+  const totalEEs     = predictions.length;
+  const clientName   = document.getElementById('clientName').value || 'Company';
 
   const data = [
     ['Effective Date:', document.getElementById('effectiveDate').value],
-    ['Client Name:', clientName],
-    ['Address:', document.getElementById('address').value],
-    ['FEIN:', document.getElementById('fein').value],
-    ['Years in Biz:', document.getElementById('yearsInBiz').value],
-    ['Losses:', document.getElementById('losses').value || 'See attached loss runs'],
-    ["EE's", totalEEs],
-    ['Operations:', document.getElementById('operations').value],
-    ['Website:', document.getElementById('website').value],
-    ['E-mod:', document.getElementById('emod').value],
+    ['Client Name:',    clientName],
+    ['Address:',        document.getElementById('address').value],
+    ['FEIN:',           document.getElementById('fein').value],
+    ['Years in Biz:',   document.getElementById('yearsInBiz').value],
+    ['Losses:',         document.getElementById('losses').value || 'See attached loss runs'],
+    ["EE's",            totalEEs],
+    ['Operations:',     document.getElementById('operations').value],
+    ['Website:',        document.getElementById('website').value],
+    ['E-mod:',          document.getElementById('emod').value],
     ['Governing Class code:', governing ? `${governing.code} — ${governing.description}` : 'REVIEW'],
     [],
     ['State', 'Class Code', 'Manual Rate', 'Payroll', 'Manual Prem', "FT - EE's", 'Net Rate'],
   ];
 
-  aggregated.forEach(a => {
-    data.push(['TX', `${a.code} — ${a.description}`, '', a.payroll, '', a.employees, '']);
-  });
-
+  aggregated.forEach(a => data.push(['TX', `${a.code} — ${a.description}`, '', a.payroll, '', a.employees, '']));
   data.push(['BWOS 2%', '', '', totalPayroll, '', totalEEs, '']);
 
   if (reviewItems.length > 0) {
     data.push([]);
     data.push([`** NEEDS REVIEW — ${reviewItems.length} employee${reviewItems.length !== 1 ? 's' : ''} require manual class code assignment **`]);
     data.push(['Employee Title', 'NAICS', 'Payroll', 'Reason']);
-    reviewItems.forEach(r => {
-      data.push([r.title, r.naics || '—', r.payroll || 0, r.reasoning]);
-    });
+    reviewItems.forEach(r => data.push([r.title, r.naics || '—', r.payroll || 0, r.reasoning]));
   }
 
   const ws = XLSX.utils.aoa_to_sheet(data);
-  ws['!cols'] = [
-    { wch: 22 }, { wch: 35 }, { wch: 14 }, { wch: 14 },
-    { wch: 14 }, { wch: 12 }, { wch: 12 },
-  ];
+  ws['!cols'] = [{ wch: 22 }, { wch: 35 }, { wch: 14 }, { wch: 14 }, { wch: 14 }, { wch: 12 }, { wch: 12 }];
   XLSX.utils.book_append_sheet(wb, ws, 'Sheet1');
 
   const infoWs = XLSX.utils.aoa_to_sheet([
@@ -1235,8 +965,7 @@ function downloadXlsx() {
   ]);
   XLSX.utils.book_append_sheet(wb, infoWs, 'Info Sheet');
 
-  const filename = `UW_Template_${clientName.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.xlsx`;
-  XLSX.writeFile(wb, filename);
+  XLSX.writeFile(wb, `UW_Template_${clientName.replace(/[^a-zA-Z0-9]/g, '_')}_${new Date().toISOString().slice(0, 10)}.xlsx`);
 }
 
 // Kick off CSV load immediately on page load
